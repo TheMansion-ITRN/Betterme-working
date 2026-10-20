@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BetterMe</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="BetterMe">
+<meta name="theme-color" content="#f1f3f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e0d" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADLUlEQVR42u3dy1HcQBRAUaFizeTlCcpKisDIwAuXN7ahmJG636fPDWAG08dPf/Hy9vPHJv2v3a9AcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsGh6X0c73AokQw4Csi4HXc4lEsGHGTAQQYcZMBBBhxk/Ol23EMOaOEwM+AgAw4y4CADDjLgIAMOVZIBBxlwkAEHGXCQAQcZcJCRthd/4y2/jL8uyU5zBkdqGV9cqZ9AxGalpIxtyiMLcJSUMccHHFVlTPABR2EZdkjryTiz//icjEE7p6+W89o+W6c88wCOMmgy67HPIThq7qnAQcYpGeNOlcJhZsDRVMbQKyxwkAEHGY/nPIc9UJODDDjIgMNRKxyKGxtw2KDAQQYcZFzb64LLM/PXXVfG1v42wdjnPkrLaL5ZiX3uo7qMzjhin/toIKMtjtjnPnrIcLRiZiyG49Hl+Tjer5ofFZ8/WAjH08uTYV2zvcOjz6HsJasb+Bijd5+nlhE4eLz7PLuMpz+tpYwOm5Vx+wpDH33OL6P85Bi6FznhNJp3n5eU8Z2v6C2jMI5pR56ffVF7GVVxTD4n8e/XrSCj3g5p7Kmq34u6iIyt1s0+4Scxm50d77NZ6bEwXoyfVMbtuMeujRfj55URu0IVX4y/LyUjap0qysh+tDL6Quuc/ZiiMlJPjgmX4CcsW10ZeXFMuzlj6OKVlpFxs3LVqH9oYUZsX6rLSDc5QmSMWMgGMnJNjvD7/JL8DCZH0lVps659cKT6/3ryczrx2sm48NOaDZ6djKs+s98maSfD/keuo5WoQ9ZxP2pLSTsZ57+l64yZOjkuPBE5eT1i3xDUH0etgfGdf0L7nZJJOBrIWLCdDGU8lCVjdRwuZcFhZsBBBhxkaEv7OCQWS0wOlzfhMDPgGLzeZKw4OVa+tgnHWR9kJCzgZp/Vrm3CIZsVwSHBITgEh+AQHIJDcAgOwSE4BIcEh+AQHIJDcAgOwSE4BIfgkOAQHIJDcAgOwSE4BIfgEBwSHIJDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ637Bdwtlbp6nAl0AAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADLUlEQVR42u3dy1HcQBRAUaFizeTlCcpKisDIwAuXN7ahmJG636fPDWAG08dPf/Hy9vPHJv2v3a9AcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsGh6X0c73AokQw4Csi4HXc4lEsGHGTAQQYcZMBBBhxk/Ol23EMOaOEwM+AgAw4y4CADDjLgIAMOVZIBBxlwkAEHGXCQAQcZcJCRthd/4y2/jL8uyU5zBkdqGV9cqZ9AxGalpIxtyiMLcJSUMccHHFVlTPABR2EZdkjryTiz//icjEE7p6+W89o+W6c88wCOMmgy67HPIThq7qnAQcYpGeNOlcJhZsDRVMbQKyxwkAEHGY/nPIc9UJODDDjIgMNRKxyKGxtw2KDAQQYcZFzb64LLM/PXXVfG1v42wdjnPkrLaL5ZiX3uo7qMzjhin/toIKMtjtjnPnrIcLRiZiyG49Hl+Tjer5ofFZ8/WAjH08uTYV2zvcOjz6HsJasb+Bijd5+nlhE4eLz7PLuMpz+tpYwOm5Vx+wpDH33OL6P85Bi6FznhNJp3n5eU8Z2v6C2jMI5pR56ffVF7GVVxTD4n8e/XrSCj3g5p7Kmq34u6iIyt1s0+4Scxm50d77NZ6bEwXoyfVMbtuMeujRfj55URu0IVX4y/LyUjap0qysh+tDL6Quuc/ZiiMlJPjgmX4CcsW10ZeXFMuzlj6OKVlpFxs3LVqH9oYUZsX6rLSDc5QmSMWMgGMnJNjvD7/JL8DCZH0lVps659cKT6/3ryczrx2sm48NOaDZ6djKs+s98maSfD/keuo5WoQ9ZxP2pLSTsZ57+l64yZOjkuPBE5eT1i3xDUH0etgfGdf0L7nZJJOBrIWLCdDGU8lCVjdRwuZcFhZsBBBhxkaEv7OCQWS0wOlzfhMDPgGLzeZKw4OVa+tgnHWR9kJCzgZp/Vrm3CIZsVwSHBITgEh+AQHIJDcAgOwSE4BIcEh+AQHIJDcAgOwSE4BIfgkOAQHIJDcAgOwSE4BIfgEBwSHIJDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ637Bdwtlbp6nAl0AAAAAElFTkSuQmCC">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22BetterMe%22%2C%20%22short_name%22%3A%20%22BetterMe%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22background_color%22%3A%20%22%23f1f3f1%22%2C%20%22theme_color%22%3A%20%22%230e7f4a%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAKOklEQVR42u3dzXEaSwBGUXCxxnmhoCApBaYMvPXCkpGYn%2B655wTwyjSu706D9Hy%2B3m8nAHp%2BOQIAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABABAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAIC/fTzeHYIAANYfAQAa6//78eYcBACw/ggAYP0RAMD6IwCA9UcAAOuPAADWHwEAplz/3483vw0gAIBnfwQAsP4IAGD9EQDA%2BiMAgPVHAADrjwAA1h8BAKy/AABYfwEAsP4CAGD9BQDA%2BgsAgPUXAADrLwAA1l8AAKy/AADWfyH%2BTRgBADz7IwCA9UcAAOuPAADWHwEArD8CAFh/BACw/ggAYP0FAMD6CwCA9RcAAOsvAADW/2AujgD41vSfTifrLwCAB38m5iMgwPoLAID1FwCAAdffvwkjAIBnfwQAsP4IAGD9EQDA%2BiMAgPVHAADrjwAA1h8BAKy/AADW3zkIAGD9EQDA%2BiMAgPVHAADrjwAA1h8BAKw/AgBYfwQAsP7L8W/CCADg2Z9Xna/3m1MA6z/Fn//rm4G3WACAQ63/dz/wUQIBAKZf/1c%2B65cBAQCmXP%2BlvuaVga/5Ehis/zHXf9n/lBsAYP3nmH5XATcAsP7W31VAAMD6V9dfAwQArH93/TVAAMD6gwCA9Y89/rsECABY/%2B76a4AAgPXvrj8CANY/vf7aIwBg/REAwPrHHsBdAgQArL/l7bo4Aph0/f85poMnwfoLAPCqz4b%2B%2BYXdPhXWfzT%2Bb6CQvkNsloox1z/%2B/bkbALhDrJ4Kz/4CAEgFAgA0UiEJI/NjoMBarL8AACAAgMd/BACw/ggAYP0RAMD6b8X/RVUAAM/%2BAgBg/QUAwPoLAMAB198XAAIAePYXAIDM%2Bnv8FwAAAQDw%2BC8AANZfAAAOtf4IABBdf4//AgBYfwQAsP5h/k1g4Mjrb/rdAADrjwAA1h8BAI7K%2BgsAUHz8t/4CAFh/BACw/ggAYP0RAMD6CwCA9RcAwPpbfwEArL/1FwDA%2BiMAAB7/BQDw%2BG/9BQCw/tZfAADrb/0FALD%2B1l8AAOtv/QUAsP7WXwAA62/9BQCw/tZfAADrb/0FAEivPwIARHn8FwCg%2BPhv/QUAsP6s4uIImGKkzIH1Z3Hn6/3mFJhonkyD9UcASG%2BTjbD%2BCADpYTIW1p9X%2BBKYiYfJD7Zbf9wAqK%2BS7bD%2BuAEQXSVXAUeBANBdJcM3L4//AoD114DiCVh/AcAkaYD1RwAwSRpg/dmEnwLimHuUGhfrjxsA9qh4D7D%2BuAFgj4pbY/1xA8AeFa8C1h8BwB4VG2D9EQDsUbEBfuOBRfgOgNYeHeAhdNL19/jvBoD196ctsv4CgPX3Zy7%2B4a3/sHwERPRResZVsv64AWCJii/B%2BuMGgCUqjpT1xw0AS1R8RdYfAcASFV%2BX9UcAsETFV2f9EQAsUfE1Wn8EAEu06Ssd5MX6hTUEAEvkJXv8Zy1%2BDBQ7ONyc%2BfAHNwCsf/EErD8CgPUvnoP1Z0s%2BAsL6j7Jx1h83AKx/8VisPwKA9S8ejvVHALD%2BxSOy/uzFdwBY/z3nz/rjBsCe02/991ptJ48A4MHf0Xn8RwAwYZkD9OEPAoD1Lx6j9WcEvgQ2W2w9jtYfNwCsf/FUrT8CgPUvnq31RwCw/sUTtv4IANa/eM7WnwH5Etj0s/p6Wn/cALD%2BxZO3/gzr4gisP84fNwCsD3j8FwCsP9YfAcD6Y/0RAKz/dktkjKw/AkBx/U2S9UcA6K6/YbL%2BrM0vgpn%2BCZbItxrWHwGguP4yYP1ZiY%2BArP80S2StrD8CQHH9bRYIAN311wCP/wgA3fU3XtafBfkS2PpPvEG%2BFrb%2BuAFY/%2BgG2TInhgBY/%2B4GWTRnxY/5CMj0H2GDfBZk/XEDsP7RDbJuzgc3AOtf3yBXAeuPG4D1j26QsXMgCID1726QyYMn%2BQjI%2Bh9zi30WpIUIgPVPr085A9af//IRkPU/8vpkR9D6IwDW3/oUp9D68yQfAZn%2BxPp0Pguy/rgBWH/rU5xF648bgPW3PsWrgPXHDcD6W5/iSlp/BMD6W5/iVlp/fsZHQNY/Oj3qC24A1ic6PXYT3ACsf31Ap347ZAwBsDV2p/i%2BWH9e5CMgK2N3pnxF1h8BsP52p/i6rD8CYP3tTvHVWX%2BW4jsA6293ZnrLrD9uAKbE7hRfrPXHDcD6G53i22f9cQMwH0an%2BNqtPwJg/Y3O1ifgEDgwHwGZfus/%2BtvqvcANwExYnOKBeC8QAOtvcYrH4r1AAKy/xSkejvcCAbD%2BFgcQAOtv/TOn5O1gA34KyPrbmuHed%2B8IbgDW3/oXD807ghuA9bf%2Bub8G3g4EwPRb/%2BLfB28HAmD9rX/uL4b3AgEw/dY/95fEG4EAWH/r3/oL4y1AAKy/9Qf25MdArT8QdXEEBaYfcAMoPv5bf0AArD%2BAADRYf0AAio//1h8QAM/%2BAALQePy3/oAAePYH%2BJTfAzD9gBsA1h8QgLIZvwCw/oAAePYHEADrDyAA1h9AAKw/gABYf0AAsP5AkF8EM/2AGwDWHxAAO%2BtPBQgA1h8QAKw/IABYf0AAzK71BwQA6w8IgP21/oAAYP0BATDE1h8QAA2w/oAAACAA4UuAx39AAIoNsP6AABQbYP2BXZyv95tTeN7H4930A24ArgLWH3ADcBUw/YAAyIDpBwRACew%2BIAAADMaXwAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAC4AgABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAABAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAAAQBAAAAQAAAEAAABAEAAABAAAAQAAAEAQAAAEAAAxvAHYn2Ep2gk8CcAAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADLUlEQVR42u3dy1HcQBRAUaFizeTlCcpKisDIwAuXN7ahmJG636fPDWAG08dPf/Hy9vPHJv2v3a9AcAgOwSE4BIfgEByCQ3AIDgkOwSE4BIfgEByCQ3AIDsEhwSE4BIfgEByCQ3AIDsGh6X0c73AokQw4Csi4HXc4lEsGHGTAQQYcZMBBBhxk/Ol23EMOaOEwM%2BAgAw4y4CADDjLgIAMOVZIBBxlwkAEHGXCQAQcZcJCRthd/4y2/jL8uyU5zBkdqGV9cqZ9AxGalpIxtyiMLcJSUMccHHFVlTPABR2EZdkjryTiz//icjEE7p6%2BW89o%2BW6c88wCOMmgy67HPIThq7qnAQcYpGeNOlcJhZsDRVMbQKyxwkAEHGY/nPIc9UJODDDjIgMNRKxyKGxtw2KDAQQYcZFzb64LLM/PXXVfG1v42wdjnPkrLaL5ZiX3uo7qMzjhin/toIKMtjtjnPnrIcLRiZiyG49Hl%2BTjer5ofFZ8/WAjH08uTYV2zvcOjz6HsJasb%2BBijd5%2BnlhE4eLz7PLuMpz%2BtpYwOm5Vx%2BwpDH33OL6P85Bi6FznhNJp3n5eU8Z2v6C2jMI5pR56ffVF7GVVxTD4n8e/XrSCj3g5p7Kmq34u6iIyt1s0%2B4Scxm50d77NZ6bEwXoyfVMbtuMeujRfj55URu0IVX4y/LyUjap0qysh%2BtDL6Quuc/ZiiMlJPjgmX4CcsW10ZeXFMuzlj6OKVlpFxs3LVqH9oYUZsX6rLSDc5QmSMWMgGMnJNjvD7/JL8DCZH0lVps659cKT6/3ryczrx2sm48NOaDZ6djKs%2Bs98maSfD/keuo5WoQ9ZxP2pLSTsZ57%2Bl64yZOjkuPBE5eT1i3xDUH0etgfGdf0L7nZJJOBrIWLCdDGU8lCVjdRwuZcFhZsBBBhxkaEv7OCQWS0wOlzfhMDPgGLzeZKw4OVa%2BtgnHWR9kJCzgZp/Vrm3CIZsVwSHBITgEh%2BAQHIJDcAgOwSE4BIcEh%2BAQHIJDcAgOwSE4BIfgkOAQHIJDcAgOwSE4BIfgEBwSHIJDcAgOwSE4BIfgEByCQ3BIcAgOwSE4BIfgEByCQ637Bdwtlbp6nAl0AAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22180x180%22%2C%20%22type%22%3A%20%22image/png%22%7D%5D%7D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap">
+<style>
+/* Layout: iOS-style app shell — large-title screens in a single column, grouped cards, fixed tab bar at the bottom */
+:root {
+  --bg: #f1f3f1;
+  --card: #ffffff;
+  --fg: #121614;
+  --ink2: #2c3530;
+  --muted: #6a736e;
+  --line: #e0e5e1;
+  --fill: #e9ecea;
+  --accent: #0e7f4a;
+  --accent-ink: #ffffff;
+  --accent-soft: #daefe2;
+  --bad: #cf3434;
+  --bad-soft: #fbe2df;
+  --warn: #a8640a;
+  --warn-soft: #fbefd8;
+  --bar: rgba(250, 251, 250, 0.86);
+  --font-display: "Sora", -apple-system, "SF Pro Display", system-ui, sans-serif;
+  --font-body: -apple-system, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  --tabh: 58px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0e0d; --card: #181b1a; --fg: #eef1ef; --ink2: #d3d9d5; --muted: #8e9792; --line: #282d2b; --fill: #222725;
+    --accent: #4cc38a; --accent-ink: #06150d; --accent-soft: #15301f; --bad: #ff7a72; --bad-soft: #3a1b19;
+    --warn: #f2b45a; --warn-soft: #382a13; --bar: rgba(20, 23, 22, 0.88); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c0e0d; --card: #181b1a; --fg: #eef1ef; --ink2: #d3d9d5; --muted: #8e9792; --line: #282d2b; --fill: #222725;
+  --accent: #4cc38a; --accent-ink: #06150d; --accent-soft: #15301f; --bad: #ff7a72; --bad-soft: #3a1b19;
+  --warn: #f2b45a; --warn-soft: #382a13; --bar: rgba(20, 23, 22, 0.88); color-scheme: dark;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); }
+body { margin: 0; -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 8px calc(var(--tabh) + env(safe-area-inset-bottom, 0px) + 28px);
+}
+body.coach { padding-bottom: calc(var(--tabh) + env(safe-area-inset-bottom, 0px) + 92px); }
+#main { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+h2 { font-size: 20px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; }
+.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.small { font-size: 13.5px; }
+.eyebrow { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Headers */
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; padding-top: 10px; }
+.top > div { min-width: 0; }
+.round { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--fill); display: grid; place-items: center; flex: none; }
+.round svg { width: 20px; height: 20px; }
+.link { border: 0; background: none; color: var(--accent); font-weight: 600; padding: 6px 0; }
+
+/* Cards and lists */
+.card { background: var(--card); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.ghead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.list li { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.list li:last-child { border-bottom: 0; }
+.list .grow { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.list .grow b { font-weight: 600; overflow-wrap: anywhere; }
+.list small { color: var(--muted); font-size: 13px; }
+.x { border: 0; background: transparent; color: var(--muted); width: 30px; height: 30px; border-radius: 8px; font-size: 20px; line-height: 1; flex: none; }
+.x:hover { background: var(--bad-soft); color: var(--bad); }
+.empty { color: var(--muted); font-size: 14.5px; }
+
+.banner { display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--accent-soft); color: var(--fg); border: 0; border-radius: 14px; padding: 12px 14px; text-align: left; width: 100%; }
+.banner b { color: var(--accent); white-space: nowrap; }
+.banner.warn { background: var(--warn-soft); }
+.banner.warn b { color: var(--warn); }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: var(--card); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stat .v { font-family: var(--font-display); font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.stat[data-tone="good"] .v { color: var(--accent); }
+.stat[data-tone="bad"] .v { color: var(--bad); }
+.stat .l { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.stat .s { font-size: 12.5px; color: var(--muted); }
+
+/* Chart */
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { font-family: var(--font-body); font-size: 11px; fill: var(--muted); }
+.bars { display: flex; flex-direction: column; gap: 8px; }
+.brow { display: grid; grid-template-columns: minmax(0, 1fr) auto 40px; gap: 10px; align-items: center; font-size: 14.5px; }
+.brow .track { grid-column: 1 / -1; height: 6px; background: var(--fill); border-radius: 999px; overflow: hidden; margin-top: -4px; }
+.brow .track i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.brow .pct { color: var(--muted); text-align: right; font-size: 13px; }
+
+/* Segmented + chips */
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--fill); border-radius: 10px; padding: 2px; gap: 2px; }
+.seg button, .seg label { border: 0; background: transparent; border-radius: 8px; padding: 7px 4px; font-size: 14px; font-weight: 600; text-align: center; color: var(--ink2); position: relative; cursor: pointer; }
+.seg button[aria-pressed="true"], .seg label:has(input:checked) { background: var(--card); box-shadow: 0 1px 3px rgba(0,0,0,.12); color: var(--fg); }
+.seg input, .chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { position: relative; border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 6px 12px; font-size: 14px; cursor: pointer; }
+.chip:has(input:checked), .chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Forms */
+.form { gap: 14px; }
+.in, textarea.in, select.in { width: 100%; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 12px; padding: 12px 14px; font: inherit; font-size: 16px; outline: none; }
+.in:focus { border-color: var(--accent); }
+textarea.in { min-height: 84px; resize: vertical; }
+.amount { display: flex; align-items: baseline; gap: 6px; border-bottom: 2px solid var(--line); padding-bottom: 4px; }
+.amount:focus-within { border-color: var(--accent); }
+.amount span { font-family: var(--font-display); font-size: 28px; color: var(--muted); }
+.amount input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font-family: var(--font-display); font-size: 40px; font-weight: 600; outline: none; padding: 0; font-variant-numeric: tabular-nums; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span { font-size: 13px; font-weight: 600; color: var(--muted); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.primary { border: 0; background: var(--accent); color: var(--accent-ink); font-weight: 700; border-radius: 12px; padding: 13px 16px; font-size: 16px; }
+.secondary { border: 1px solid var(--line); background: var(--card); font-weight: 600; border-radius: 12px; padding: 11px 14px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.datebar { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.datebar div { text-align: center; display: flex; flex-direction: column; }
+.datebar small { color: var(--muted); font-size: 13px; }
+
+/* Tasks */
+.check { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--muted); background: transparent; flex: none; display: grid; place-items: center; padding: 0; }
+.check[aria-checked="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.check svg { width: 14px; height: 14px; }
+.due { font-size: 12.5px; color: var(--muted); }
+.due.over { color: var(--bad); font-weight: 600; }
+.pri { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pri[data-p="high"] { background: var(--bad); }
+.pri[data-p="medium"] { background: var(--warn); }
+.pri[data-p="low"] { background: var(--line); }
+.done b { text-decoration: line-through; color: var(--muted); font-weight: 500; }
+
+/* AI output */
+.ai-note { font-size: 13px; color: var(--muted); }
+.thinking { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14.5px; }
+.thinking::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--accent); animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.agents { display: flex; flex-direction: column; gap: 6px; }
+.agent { display: flex; justify-content: space-between; gap: 10px; font-size: 14.5px; padding: 8px 10px; background: var(--bg); border-radius: 10px; }
+.agent[data-s="working"] span:last-child { color: var(--accent); }
+.agent[data-s="done"] span:last-child { color: var(--accent); font-weight: 600; }
+.agent[data-s="failed"] span:last-child { color: var(--bad); }
+.grade { display: flex; align-items: center; gap: 14px; }
+.grade .g { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; font-family: var(--font-display); font-size: 30px; font-weight: 700; background: var(--accent-soft); color: var(--accent); flex: none; }
+.grade .g[data-g="C"], .grade .g[data-g="D"] { background: var(--warn-soft); color: var(--warn); }
+.grade .g[data-g="F"] { background: var(--bad-soft); color: var(--bad); }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+.kv div { background: var(--bg); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; min-width: 0; }
+.kv small { color: var(--muted); font-size: 12.5px; }
+.kv b { font-family: var(--font-display); font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.warnbox { background: var(--warn-soft); color: var(--fg); border-radius: 12px; padding: 10px 12px; font-size: 14.5px; }
+.errbox { background: var(--bad-soft); color: var(--bad); border-radius: 12px; padding: 10px 12px; font-size: 14.5px; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
+.pill[data-v="cut"] { background: var(--bad-soft); color: var(--bad); }
+.pill[data-v="reduce"] { background: var(--warn-soft); color: var(--warn); }
+.pill[data-v="keep"] { background: var(--accent-soft); color: var(--accent); }
+.day { border-top: 1px solid var(--line); padding-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.day:first-child { border-top: 0; padding-top: 0; }
+.day.now { background: var(--accent-soft); border-radius: 12px; padding: 10px 12px; border-top: 0; }
+.day ul { margin: 2px 0 0; padding-left: 18px; font-size: 14.5px; }
+details { border-top: 1px solid var(--line); padding-top: 10px; }
+details:first-of-type { border-top: 0; padding-top: 0; }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--muted); font-weight: 400; }
+details[open] summary::after { content: "–"; }
+details > div { padding-top: 8px; display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; }
+.md { font-size: 15.5px; display: flex; flex-direction: column; gap: 10px; overflow-wrap: anywhere; }
+.md h4 { font-size: 16.5px; margin-top: 6px; }
+.md ul, .md ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.md .tbl { overflow-x: auto; }
+.md table { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+.md td, .md th { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; white-space: nowrap; }
+.md code { background: var(--fill); border-radius: 4px; padding: 0 4px; font-size: .92em; }
+ul.plain { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 14.5px; }
+
+/* Coach */
+.chat { display: flex; flex-direction: column; gap: 10px; }
+.msg { max-width: 86%; padding: 10px 14px; border-radius: 18px; font-size: 15.5px; overflow-wrap: anywhere; }
+.msg.user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 6px; white-space: pre-wrap; }
+.msg.assistant { align-self: flex-start; background: var(--card); border-bottom-left-radius: 6px; }
+.msg.assistant .md { font-size: 15.5px; gap: 8px; }
+.tool-note { align-self: flex-start; font-size: 12.5px; color: var(--muted); padding-left: 6px; }
+.composer { position: fixed; left: 0; right: 0; bottom: calc(var(--tabh) + env(safe-area-inset-bottom, 0px)); padding: 8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px)); background: var(--bar); backdrop-filter: saturate(1.6) blur(16px); -webkit-backdrop-filter: saturate(1.6) blur(16px); border-top: 1px solid var(--line); z-index: 20; }
+.composer form { max-width: 620px; margin: 0 auto; display: flex; gap: 8px; align-items: flex-end; }
+.composer textarea { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 20px; padding: 9px 14px; font: inherit; font-size: 16px; resize: none; max-height: 120px; outline: none; }
+.send { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; flex: none; }
+.send svg { width: 18px; height: 18px; }
+
+/* Tab bar */
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--bar); backdrop-filter: saturate(1.6) blur(16px); -webkit-backdrop-filter: saturate(1.6) blur(16px); border-top: 1px solid var(--line); padding: 0 max(8px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(8px, env(safe-area-inset-left, 0px)); }
+.tabbar nav { max-width: 620px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); height: var(--tabh); }
+.tabbar button { border: 0; background: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 10.5px; font-weight: 600; color: var(--muted); }
+.tabbar button svg { width: 25px; height: 25px; }
+.tabbar button[aria-current="page"] { color: var(--accent); }
+
+/* Sheet */
+.sheet-bg { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 40; display: flex; align-items: flex-end; justify-content: center; }
+.sheet { background: var(--bg); width: 100%; max-width: 620px; max-height: 92%; overflow-y: auto; border-radius: 18px 18px 0 0; padding: 16px max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 14px; }
+.sheet .grab { width: 40px; height: 5px; border-radius: 3px; background: var(--line); align-self: center; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(var(--tabh) + env(safe-area-inset-bottom, 0px) + 16px); background: var(--fg); color: var(--bg); padding: 9px 16px; border-radius: 999px; font-size: 14.5px; z-index: 60; max-width: calc(100% - 32px); text-align: center; }
+.sync { font-size: 12px; color: var(--muted); }
+/* Money */
+.hero { display: flex; flex-direction: column; gap: 6px; }
+.hero .big { font-family: var(--font-display); font-size: clamp(36px, 11vw, 46px); font-weight: 700; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.split { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--fill); }
+.split i { display: block; height: 100%; }
+.lines li { padding: 8px 0; }
+.lines li .num { margin-left: auto; }
+.lines li.total { font-weight: 700; }
+.lines .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.costs { display: flex; flex-direction: column; gap: 8px; }
+.cost { display: grid; grid-template-columns: minmax(0, 1fr) 104px 30px; gap: 6px; align-items: center; }
+.money-in { display: flex; align-items: center; border: 1px solid var(--line); background: var(--bg); border-radius: 12px; padding: 0 10px; min-width: 0; }
+.money-in:focus-within { border-color: var(--accent); }
+.money-in span { color: var(--muted); }
+.money-in input { flex: 1; min-width: 0; width: 100%; border: 0; background: transparent; color: var(--fg); font: inherit; font-size: 16px; padding: 12px 2px; text-align: right; outline: none; font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.pie { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; align-items: center; }
+.pie svg { width: 140px; height: 140px; display: block; }
+.pie svg text { font-family: var(--font-display); fill: var(--fg); }
+.legend { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.legend li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 4px 8px; align-items: baseline; }
+.legend .dot { width: 10px; height: 10px; border-radius: 3px; }
+.legend b { font-variant-numeric: tabular-nums; }
+.legend small { grid-column: 2 / -1; color: var(--muted); font-size: 12.5px; }
+.legend small.off { color: var(--bad); }
+.health { display: flex; gap: 12px; align-items: center; border-radius: 14px; padding: 12px 14px; }
+.health[data-l="good"] { background: var(--accent-soft); }
+.health[data-l="ok"] { background: var(--warn-soft); }
+.health[data-l="bad"] { background: var(--bad-soft); }
+.hdot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+[data-l="good"] > .hdot, .hchip[data-l="good"]::before { background: var(--accent); }
+[data-l="ok"] > .hdot, .hchip[data-l="ok"]::before { background: var(--warn); }
+[data-l="bad"] > .hdot, .hchip[data-l="bad"]::before { background: var(--bad); }
+.health div { display: flex; flex-direction: column; min-width: 0; }
+.health small { color: var(--ink2); font-size: 13px; }
+.tips { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.tips li { display: flex; gap: 10px; font-size: 14.5px; background: var(--bg); border-radius: 12px; padding: 10px 12px; }
+.tips li::before { content: "↑"; color: var(--accent); font-weight: 700; flex: none; }
+.hchip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--ink2); }
+.hchip::before { content: ""; width: 9px; height: 9px; border-radius: 50%; }
+@media (max-width: 380px) { .pie { grid-template-columns: 1fr; justify-items: center; } .pie .legend { width: 100%; } }
+.month-card { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--card); border-radius: 16px; padding: 14px 16px; border: 0; text-align: left; width: 100%; }
+.month-card b { font-family: var(--font-display); font-size: 22px; color: var(--accent); font-variant-numeric: tabular-nums; }
+@media (max-width: 360px) { .stats { grid-template-columns: 1fr; } .two { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .thinking::before { animation: none; } }
+</style>
+</head>
+<body>
+<main id="main"><p class="thinking">Loading BetterMe…</p></main>
+<div id="composer"></div>
+<div class="tabbar"><nav id="tabs"></nav></div>
+<div id="sheet"></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(() => {
+"use strict";
+// ================================================================ helpers
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pad = (n) => String(n).padStart(2, "0");
+const keyOf = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const parseKey = (k) => { const [y, m, d] = k.split("-").map(Number); return new Date(y, m - 1, d); };
+const addDays = (k, n) => { const d = parseKey(k); d.setDate(d.getDate() + n); return keyOf(d); };
+const todayKey = () => keyOf(new Date());
+const dayIdx = (k) => (parseKey(k).getDay() + 6) % 7;
+const weekOf = (k) => addDays(k, -dayIdx(k));
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAYS_FULL = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const fmtDate = (k, o) => parseKey(k).toLocaleDateString("en-GB", o || { weekday: "short", day: "numeric", month: "short" });
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const sum = (a, f) => a.reduce((s, x) => s + (Number(f ? f(x) : x) || 0), 0);
+const round2 = (n) => Math.round(n * 100) / 100;
+function parseAmount(s) {
+  s = String(s ?? "").replace(/[^\d.,-]/g, "");
+  if (!s) return 0;
+  if (s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+  const n = parseFloat(s);
+  return isFinite(n) ? n : 0;
+}
+const CURRENCIES = { EUR: "en-IE", USD: "en-US", GBP: "en-GB" };
+function money(n, exact) {
+  const cur = profile().currency || "EUR";
+  n = Number(n) || 0;
+  const frac = exact || (Math.abs(n) < 100 && n % 1 !== 0) ? 2 : 0;
+  return new Intl.NumberFormat(CURRENCIES[cur] || "en-IE", { style: "currency", currency: cur, minimumFractionDigits: frac, maximumFractionDigits: frac }).format(n);
+}
+const curSymbol = () => ({ EUR: "€", USD: "$", GBP: "£" }[profile().currency || "EUR"]);
+
+const EXP_CATS = { food_out: "Eating out", groceries: "Groceries", transport: "Transport", rent: "Rent", bills: "Bills", subscriptions: "Subscriptions", shopping: "Shopping", fun: "Fun", health: "Health", other: "Other" };
+const ACT_CATS = { work: "Work", health: "Health", social: "Social", learning: "Learning", chores: "Chores", leisure: "Leisure", commute: "Commute", other: "Other" };
+const MOODS = ["Rough", "Meh", "OK", "Good", "Great"];
+
+const ICON = {
+  today: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg>',
+  log: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>',
+  tasks: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>',
+  week: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+  coach: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5.5h16v11H9l-5 4z"/></svg>',
+  money: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7v10.5A1.5 1.5 0 0 0 5.5 19h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 18.5 8H5.5A1.5 1.5 0 0 1 4 6.5 1.5 1.5 0 0 1 5.5 5H16"/><circle cx="16" cy="13.5" r="1.2" fill="currentColor"/></svg>',
+  gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>',
+  tick: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>',
+  stop: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>'
+};
+
+// ================================================================ store
+const LS = "betterme:";
+const DOCS = {};
+const dirty = {};
+let mode = "local", db = null, userId = null;
+const chains = {};
+
+function loadLocal() {
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith(LS)) DOCS[k.slice(LS.length)] = JSON.parse(localStorage.getItem(k));
+    }
+  } catch (e) {}
+}
+function put(id, data) {
+  DOCS[id] = Object.assign({}, data, { updatedAt: new Date().toISOString() });
+  persist(id, false);
+}
+function drop(id) { delete DOCS[id]; persist(id, true); }
+const soonT = {};
+function putSoon(id, data, ms) {
+  DOCS[id] = Object.assign({}, data, { updatedAt: new Date().toISOString() });
+  if (mode === "local") { clearTimeout(soonT[id]); soonT[id] = setTimeout(() => { soonT[id] = null; persist(id, false); }, ms || 600); return; }
+  if (!soonT[id]) { dirty[id] = (dirty[id] || 0) + 1; setSync(); }
+  clearTimeout(soonT[id]);
+  soonT[id] = setTimeout(() => { soonT[id] = null; persist(id, false); dirty[id]--; setSync(); }, ms || 600);
+}
+function persist(id, del) {
+  if (mode === "local") {
+    try { del ? localStorage.removeItem(LS + id) : localStorage.setItem(LS + id, JSON.stringify(DOCS[id])); } catch (e) {}
+    return;
+  }
+  const body = DOCS[id];
+  const ref = db.doc(`data/users/${userId}/${id}`);
+  const run = () => del ? ref.delete() : ref.set(body);
+  dirty[id] = (dirty[id] || 0) + 1; setSync();
+  chains[id] = (chains[id] || Promise.resolve())
+    .then(run)
+    .catch((e) => {
+      if (e && e.code === "unavailable") return new Promise((r) => setTimeout(r, 900 + Math.random() * 900)).then(run).catch(() => toast("Couldn't save. Check your connection."));
+      if (e && e.code === "quota_exceeded") toast("Storage is full. Clear the coach chat or old weeks.");
+      else toast("Couldn't save that change.");
+    })
+    .finally(() => { dirty[id]--; setSync(); });
+}
+function setSync() {
+  const el = $("#sync");
+  if (!el) return;
+  const busy = Object.values(dirty).some((n) => n > 0);
+  el.textContent = mode === "local" ? "Saved on this phone" : busy ? "Saving…" : "Synced to your account";
+}
+
+// typed accessors
+const PROFILE_DEFAULT = { name: "", currency: "EUR", monthlyIncome: 0, savingsGoal: 0, hourlyRate: 0, weeklyBudget: 0 };
+const profile = () => Object.assign({}, PROFILE_DEFAULT, DOCS.profile || {});
+const weekDoc = (wk) => Object.assign({ expenses: [], activities: [], work: [], checkins: {} }, clone(DOCS["wk-" + wk] || {}));
+function updateWeek(dateKey, fn) {
+  const wk = weekOf(dateKey);
+  const d = weekDoc(wk);
+  fn(d);
+  delete d.updatedAt;
+  put("wk-" + wk, d);
+}
+const tasks = () => (DOCS.tasks && DOCS.tasks.items) || [];
+const setTasks = (items) => put("tasks", { items });
+const planDoc = (wk) => DOCS["plan-" + wk] || null;
+const reviewDoc = (wk) => DOCS["review-" + wk] || null;
+const chatMsgs = () => (DOCS.chat && DOCS.chat.messages) || [];
+
+function allWeeks() { return Object.keys(DOCS).filter((k) => k.startsWith("wk-")).map((k) => k.slice(3)).sort(); }
+function allExpenses() { return allWeeks().flatMap((wk) => (DOCS["wk-" + wk].expenses || [])); }
+function allActivities() { return allWeeks().flatMap((wk) => (DOCS["wk-" + wk].activities || [])); }
+function allWork() { return allWeeks().flatMap((wk) => (DOCS["wk-" + wk].work || [])); }
+
+// ================================================================ maths
+function weekTotals(wk) {
+  const d = weekDoc(wk);
+  const byCategory = {}, byDay = [0, 0, 0, 0, 0, 0, 0];
+  let spent = 0, want = 0, need = 0, flexSpent = 0;
+  const flexByDay = [0, 0, 0, 0, 0, 0, 0];
+  d.expenses.forEach((e) => {
+    spent += e.amount;
+    if (!FIXED_CATS.has(e.category)) { flexSpent += e.amount; flexByDay[dayIdx(e.date)] += e.amount; }
+    byCategory[e.category] = (byCategory[e.category] || 0) + e.amount;
+    byDay[dayIdx(e.date)] += e.amount;
+    if (e.necessity === "want") want += e.amount; else if (e.necessity === "need") need += e.amount;
+  });
+  const minutesByCat = {};
+  d.activities.forEach((a) => { minutesByCat[a.category] = (minutesByCat[a.category] || 0) + a.durationMin; });
+  const workHours = round2(sum(d.work, (w) => w.hours));
+  const rate = profile().hourlyRate || 0;
+  return { spent: round2(spent), flexSpent: round2(flexSpent), flexByDay, byCategory, byDay, want: round2(want), need: round2(need), minutesByCat, workHours, earned: round2(workHours * rate), d };
+}
+function weekBudget(wk) {
+  const p = planDoc(wk);
+  const o = p && p.output;
+  if (o && o.budget_advice && o.budget_advice.weekly_spend_cap) return o.budget_advice.weekly_spend_cap;
+  if (o && o.game_plan && o.game_plan.weekly_spend_cap) return o.game_plan.weekly_spend_cap;
+  if (p && p.intake) { const i = p.intake; const b = (i.lunchBudget + i.dinnerBudget) * 7 + i.otherBudget; if (b) return b; }
+  if (DOCS.money) return moneyDoc().allowance;
+  const r = reviewDoc(addDays(wk, -7));
+  if (r && r.strategist && r.strategist.next_week_plan && r.strategist.next_week_plan.weekly_spend_cap) return r.strategist.next_week_plan.weekly_spend_cap;
+  return profile().weeklyBudget || null;
+}
+
+// ---------------------------------------------------------------- monthly money
+// Monthly costs (rent, bills, subscriptions) are covered by the Money plan, so they don't count against the weekly budget.
+const FIXED_CATS = new Set(["rent", "bills", "subscriptions"]);
+const curYM = () => todayKey().slice(0, 7);
+const shiftYM = (ym, n) => { let [y, m] = ym.split("-").map(Number); m += n; while (m < 1) { m += 12; y--; } while (m > 12) { m -= 12; y++; } return y + "-" + pad(m); };
+const monthLabel = (ym, short) => { const [y, m] = ym.split("-").map(Number); return new Date(y, m - 1, 1).toLocaleDateString("en-GB", short ? { month: "short", year: "numeric" } : { month: "long", year: "numeric" }); };
+const weeksInMonth = (ym) => { const [y, m] = ym.split("-").map(Number); return new Date(y, m, 0).getDate() / 7; };
+const moneyDoc = () => Object.assign({ costs: [], allowance: 100 }, clone(DOCS.money || {}));
+const monthDoc = (ym) => DOCS["month-" + ym] || null;
+function monthPlan(ym) {
+  const md = moneyDoc(), m = monthDoc(ym) || {};
+  const income = (m.salary || 0) + (m.extra || 0);
+  const costs = round2(sum(md.costs, (c) => c.amount));
+  const spend = Math.round(md.allowance * weeksInMonth(ym));
+  const rest = income - costs - spend;
+  return { income, costs, spend, allowance: md.allowance, weeks: weeksInMonth(ym), save: Math.max(0, Math.round(rest)), short: rest < 0 ? round2(-rest) : 0, rate: income ? Math.max(0, Math.round(rest)) / income : 0 };
+}
+function saveMonth(ym, salary, extra) {
+  if (!salary && !extra) { if (DOCS["month-" + ym]) drop("month-" + ym); return; }
+  DOCS["month-" + ym] = { salary, extra };
+  const p = monthPlan(ym);
+  putSoon("month-" + ym, { salary, extra, costs: p.costs, spend: p.spend, save: p.save });
+}
+function refreshMonth(ym) { const m = monthDoc(ym); if (m) saveMonth(ym, m.salary || 0, m.extra || 0); }
+function activePlan(wk) {
+  const p = planDoc(wk);
+  if (p && p.output && p.output.game_plan) return p.output.game_plan;
+  const r = reviewDoc(addDays(wk, -7));
+  if (r && r.strategist && r.strategist.next_week_plan) return r.strategist.next_week_plan;
+  return null;
+}
+
+// ================================================================ AI
+let AI = null; // set when an API key is saved
+const KEY_LS = "betterme-apikey";
+const MODELS = { quick: "claude-haiku-5-5", default: "claude-sonnet-5-5", complex: "claude-opus-5-5" };
+const getKey = () => { try { return localStorage.getItem(KEY_LS) || ""; } catch (e) { return ""; } };
+async function callClaude(messages, o) {
+  let res;
+  try {
+    res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST", signal: o.signal,
+      headers: { "content-type": "application/json", "x-api-key": getKey(), "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" },
+      body: JSON.stringify(Object.assign({ model: MODELS[o.modelTier || "default"], max_tokens: o.max_tokens || 4000, messages }, o.tools && o.tools.length ? { tools: o.tools } : {}))
+    });
+  } catch (e) {
+    throw { code: e && e.name === "AbortError" ? "cancelled" : "upstream_error" };
+  }
+  if (!res.ok) {
+    const j = await res.json().catch(() => ({}));
+    const msg = (j.error && j.error.message) || res.statusText;
+    throw { code: res.status === 401 || res.status === 403 ? "bad_key" : res.status === 429 ? "rate_limited" : res.status >= 500 ? "upstream_error" : "api_error", message: msg };
+  }
+  return res.json();
+}
+function mergeTurns(turns) {
+  const out = [];
+  turns.forEach((t) => { const last = out[out.length - 1]; if (last && last.role === t.role && typeof last.content === "string") last.content += "\n\n" + t.content; else out.push({ role: t.role, content: t.content }); });
+  return out;
+}
+function parseLooseJSON(text) {
+  const t = String(text || "").trim();
+  try { return JSON.parse(t); } catch (e) {}
+  const f = t.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (f) { try { return JSON.parse(f[1]); } catch (e) {} }
+  const a = t.search(/[\[{]/), b = Math.max(t.lastIndexOf("}"), t.lastIndexOf("]"));
+  if (a >= 0 && b > a) { try { return JSON.parse(t.slice(a, b + 1)); } catch (e) {} }
+  throw { code: "invalid_json", text: t };
+}
+function makeAI() {
+  const ask = async (input, opts) => {
+    opts = opts || {};
+    const messages = mergeTurns(typeof input === "string" ? [{ role: "user", content: input }] : input);
+    const tools = opts.tools || null;
+    const apiTools = tools ? tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.inputSchema || { type: "object", properties: {} } })) : null;
+    let text = "";
+    for (let round = 0; round < 6; round++) {
+      let r;
+      try { r = await callClaude(messages, { tools: apiTools, modelTier: opts.modelTier, signal: opts.signal, max_tokens: opts.max_tokens }); }
+      catch (e) { if (text) e.text = text; throw e; }
+      const t = r.content.filter((x) => x.type === "text").map((x) => x.text).join("");
+      if (t) { text = text ? text + "\n\n" + t : t; if (opts.onText) opts.onText({ text, delta: t }); }
+      const uses = r.content.filter((x) => x.type === "tool_use");
+      if (r.stop_reason !== "tool_use" || !uses.length || !tools) {
+        if (!text) throw { code: "empty_completion" };
+        return { text, truncated: r.stop_reason === "max_tokens" };
+      }
+      messages.push({ role: "assistant", content: r.content });
+      const results = [];
+      for (const u of uses) {
+        const tool = tools.find((x) => x.name === u.name);
+        try {
+          if (!tool) throw new Error("Unknown tool " + u.name);
+          const out = await tool.execute(u.input || {}, { signal: opts.signal });
+          results.push({ type: "tool_result", tool_use_id: u.id, content: typeof out === "string" ? out : JSON.stringify(out) });
+        } catch (e) { results.push({ type: "tool_result", tool_use_id: u.id, content: "Error: " + (e && e.message || e), is_error: true }); }
+      }
+      messages.push({ role: "user", content: results });
+    }
+    return { text, truncated: false };
+  };
+  ask.json = async (input, opts) => {
+    opts = Object.assign({}, opts || {});
+    opts.max_tokens = opts.modelTier === "complex" ? 16000 : 12000;
+    const r = await ask(input, opts);
+    if (r.truncated) throw { code: "invalid_json", text: r.text };
+    return parseLooseJSON(r.text);
+  };
+  ask.limits = async () => ({ tools: { maxCount: 20 } });
+  return ask;
+}
+const AI_ERR = {
+  bad_key: "Your API key was rejected. Check it in Settings.",
+  empty_completion: "Claude sent back an empty answer. Try again.",
+  not_granted: "You didn't allow BetterMe to use Claude, so AI features are off for now. Reopen the page to be asked again.",
+  sampling_disabled: "Claude isn't available on this account.",
+  rate_limited: "Too many requests right now. Wait a minute, then try again.",
+  session_expired: "Your session expired. Sign in to Claude again.",
+  invalid_json: "The answer came back in the wrong format. Try again.",
+  prompt_too_large: "There's too much data to send at once. Try a shorter period.",
+  refused: "Claude declined this request.",
+  cancelled: "Stopped."
+};
+const aiError = (e) => (e && e.code === "api_error" ? "Claude returned an error: " + e.message : AI_ERR[e && e.code] || "Couldn't reach Claude. Check your connection and try again.");
+
+const HOUSE_RULES = () => `You are part of BetterMe, a personal finance and life coach the user actually trusts.
+
+Non-negotiables:
+- Work only from the data given. Never invent a transaction, an amount, or a habit.
+- Be direct and specific. "You spent ${curSymbol()}86 on Thuisbezorgd across 6 orders" beats "you spend a lot on food".
+- Every number you state must be derivable from the data you were given.
+- Judge behaviour, not the person. Blunt is good; contemptuous is not.
+- If the data is thin, say what is missing instead of padding the answer.
+- You are not a licensed financial advisor. Give practical budgeting and habit guidance; do not give investment, securities, tax, or credit-product advice.
+- All money is in ${profile().currency || "EUR"} (${curSymbol()}).`;
+
+const ROLES = {
+  spending: `YOUR ROLE: Spending Forensics.
+Find exactly where the money went and which of it was avoidable. Identify repeat patterns (same merchant, same time of day, same trigger) rather than one-off purchases. For each leak, annualise it so the user feels the real cost. Classify each leak as cut / reduce / keep — some spending is worth keeping.`,
+  cashflow: `YOUR ROLE: Cash Flow Analyst — the "why am I broke" agent.
+Compare money in against money out. Look past individual purchases for the structural reason: is income too low, are fixed costs too high, is it timing, or is it a volume-of-small-purchases problem? Rank the reasons by how much money they actually move. Structural fixes only — no "spend less" platitudes.`,
+  time: `YOUR ROLE: Time & Productivity Auditor.
+Analyse how the user spent their hours and connect it to their spending. Late work nights that turn into takeout, commute time that becomes convenience spending, idle hours that become shopping. Compute what their time is actually worth, and name hours that could be reclaimed and what to do with them.`,
+  meal: `YOUR ROLE: Meal & Calorie Strategist.
+Look at what the user spent eating out. Design replacement meals they will actually cook: cheap, fast (under 30 minutes), ordinary supermarket ingredients, and genuinely lower in calories than the takeout equivalent.
+Hard requirement: the meals you propose must add up to at least 2000 calories avoided across the week versus the takeout they replace, and you must show the per-meal calorie and money figures that get you there. Cover both lunch and dinner for the days that need it. Include a consolidated grocery list.`,
+  strategist: `YOUR ROLE: Chief Strategist. You are the only agent the user reads directly.
+You receive the reports of four specialists. Your job:
+1. Reconcile them — if two disagree, say which is right and why.
+2. Write the week's post-mortem in markdown: what happened, what went wrong, what the user should have done instead, with the money figure attached to each mistake. Keep it tight: short sections with "####" headings, bullets, no tables wider than 3 columns.
+3. Give a letter grade for the week.
+4. Produce next week's game plan: a spend cap, daily lunch and dinner budgets, a savings target, hard rules, and a day-by-day plan for Monday to Sunday.
+The plan must be specific enough to follow without thinking. "Cap lunch at ${curSymbol()}9, pack Tuesday and Thursday" — not "be mindful of lunch spending".`,
+  monday: `YOUR ROLES (Monday intake), done as one team:
+1. Budget Architect: the user has told you what they expect to earn and what they want to spend on lunch and dinner. Check whether those numbers are realistic against what they actually spent in recent weeks (see history). If their plan is fantasy, say so and give the number that works. Return concrete daily allowances and a weekly cap.
+2. Game Plan Coach: turn the user's goals, tasks and budget into a day-by-day plan for the week. Each day gets a focus, a spend cap, the tasks to finish, and what they are eating. Front-load the hard things. Leave one flexible day so the plan survives contact with reality.
+3. Meal Strategist: seven days of lunches and dinners that are cheap, under 30 minutes, ordinary supermarket ingredients, and that together save at least 2000 calories versus takeout. Show per-meal calories, cost and saving versus eating out.`
+};
+const MEAL_IDEA = `{"day_of_week": 0-6 (0 = Monday), "meal": "lunch" | "dinner", "name": string, "calories": number, "est_cost": number, "ingredients": [string], "steps": string (2-4 short sentences), "save_vs_eat_out": number}`;
+const PLAN_SHAPE = `{"theme": string, "weekly_spend_cap": number, "daily_lunch_budget": number, "daily_dinner_budget": number, "savings_target": number, "rules": [string], "days": [7 items, Monday to Sunday: {"day": "Monday", "focus": string, "spend_cap": number, "tasks": [string], "meals": string}]}`;
+const SHAPES = {
+  spending: `{"headline": string, "biggest_category": string, "biggest_category_amount": number, "want_vs_need": {"want": number, "need": number, "unknown": number}, "leaks": [{"label": string, "category": string, "amount": number, "occurrences": number, "annualized": number, "verdict": "cut" | "reduce" | "keep", "reasoning": string}], "repeat_merchants": [string], "total_avoidable": number, "notes": string}`,
+  cashflow: `{"headline": string, "earned": number, "spent": number, "net": number, "burn_rate_per_day": number, "days_of_runway": number | null, "why_broke": [string, ranked], "structural_fixes": [string], "notes": string}`,
+  time: `{"headline": string, "work_hours": number, "effective_hourly_rate": number | null, "hours_by_category": {"<category>": number}, "time_money_link": string, "reclaimable_hours": number, "reclaim_moves": [string], "notes": string}`,
+  meal: `{"headline": string, "spent_eating_out": number, "meals_bought_out": number, "calories_saved_estimate": number, "money_saved_estimate": number, "meals": [${MEAL_IDEA}], "grocery_list": [string], "notes": string}`,
+  strategist: `{"narrative": string (markdown), "wasted_spend": number, "could_have_saved": number, "grade": "A" | "B" | "C" | "D" | "F", "top_three_moves": [string, string, string], "next_week_plan": ${PLAN_SHAPE}}`,
+  monday: `{"budget_advice": {"recommended_daily_lunch": number, "recommended_daily_dinner": number, "recommended_weekly_other": number, "weekly_spend_cap": number, "projected_savings": number, "reasoning": string, "warnings": [string]}, "game_plan": ${PLAN_SHAPE}, "meals": [${MEAL_IDEA}], "calorie_savings_total": number, "notes": string}`
+};
+function agentPrompt(role, data) {
+  return `${HOUSE_RULES()}\n\n${ROLES[role]}\n\nDATA (JSON):\n${JSON.stringify(data)}\n\nReply with only one JSON object of exactly this shape and nothing else:\n${SHAPES[role]}`;
+}
+
+function snapshot(wk) {
+  const t = weekTotals(wk), p = profile(), today = todayKey();
+  const history = [];
+  for (let i = 1; i <= 4; i++) {
+    const w = addDays(wk, -7 * i);
+    if (DOCS["wk-" + w]) { const h = weekTotals(w); history.push({ week_start: w, spent: h.spent, by_category: h.byCategory, work_hours: h.workHours }); }
+  }
+  const plan = planDoc(wk);
+  return {
+    today, week_start: wk, week_end: addDays(wk, 6),
+    profile: { monthly_savings_goal: p.savingsGoal || null, hourly_rate: p.hourlyRate || null },
+    month_budget: (() => { const ym = wk.slice(0, 7), mp = monthPlan(ym), m = monthDoc(ym) || {}; return { month: ym, salary: m.salary || null, other_income: m.extra || null, monthly_costs: moneyDoc().costs.map((c) => ({ name: c.name, amount: c.amount })), monthly_costs_total: mp.costs, spending_money_per_week: mp.allowance, savings_this_month: mp.income ? mp.save : null, note: "Rent, bills and subscriptions are covered by monthly costs and excluded from the weekly budget." }; })(),
+    expenses: t.d.expenses.map((e) => ({ date: e.date, day: DAYS[dayIdx(e.date)], amount: e.amount, category: e.category, merchant: e.merchant || null, necessity: e.necessity })),
+    activities: t.d.activities.map((a) => ({ date: a.date, category: a.category, description: a.description, minutes: a.durationMin, productivity: a.productivity || null })),
+    work: t.d.work.map((w) => ({ date: w.date, hours: w.hours, notes: w.notes || null })),
+    checkins: t.d.checkins,
+    totals: { spent: t.spent, by_category: t.byCategory, by_day: Object.fromEntries(DAYS.map((d, i) => [d, round2(t.byDay[i])])), want: t.want, need: t.need, work_hours: t.workHours, earned_from_logged_hours: t.earned },
+    weekly_budget: weekBudget(wk),
+    plan_intake: plan ? plan.intake : null,
+    tasks: {
+      open: tasks().filter((x) => x.status === "open").map((x) => ({ title: x.title, due: x.dueAt || null, priority: x.priority })),
+      completed_this_week: tasks().filter((x) => x.status === "done" && x.completedAt && x.completedAt.slice(0, 10) >= wk && x.completedAt.slice(0, 10) <= addDays(wk, 6)).map((x) => x.title)
+    },
+    history_previous_weeks: history
+  };
+}
+
+// ================================================================ UI state
+const S = {
+  tab: "today",
+  logDate: todayKey(),
+  logMode: "spend",
+  lastCat: "food_out",
+  weekMode: dayIdx(todayKey()) >= 4 ? "review" : "plan",
+  weekSel: weekOf(todayKey()),
+  sheet: null,
+  insightBusy: false, insightErr: "",
+  planBusy: false, planErr: "",
+  review: null, // {wk, status:{...}, err}
+  chat: { busy: false, text: "", notes: [], err: "", ctl: null },
+  doneOpen: false,
+  moneyYM: curYM()
+};
+
+// ================================================================ render
+let renderQueued = false, pendingRender = false;
+function scheduleRender() {
+  if (renderQueued) return;
+  renderQueued = true;
+  requestAnimationFrame(() => { renderQueued = false; render(false); });
+}
+function render(force) {
+  const a = document.activeElement;
+  if (!force && a && a !== document.body && (a.matches("input, textarea, select")) ) { pendingRender = true; return; }
+  pendingRender = false;
+  document.body.classList.toggle("coach", S.tab === "coach");
+  $("#main").innerHTML = SCREENS[S.tab]();
+  $("#tabs").innerHTML = [["today", "Today"], ["log", "Log"], ["money", "Money"], ["week", "Week"], ["coach", "Coach"]]
+    .map(([k, l]) => `<button data-act="tab" data-arg="${k}" aria-current="${S.tab === k ? "page" : "false"}">${ICON[k]}<span>${l}</span></button>`).join("");
+  $("#composer").innerHTML = S.tab === "coach" ? composerHTML() : "";
+  $("#sheet").innerHTML = S.sheet ? sheetHTML() : "";
+  setSync();
+  if (S.tab === "coach") requestAnimationFrame(() => window.scrollTo(0, document.body.scrollHeight));
+}
+document.addEventListener("focusout", () => {
+  setTimeout(() => {
+    const a = document.activeElement;
+    if (pendingRender && !(a && a.matches && a.matches("input, textarea, select"))) render(true);
+  }, 350);
+});
+
+function aiStatusNote() {
+  if (!AI) return `<p class="ai-note">Add your Anthropic API key in <button class="link" style="padding:0" data-act="sheet" data-arg="settings">Settings</button> to turn on the coach, Monday plan and Friday review.</p>`;
+  return "";
+}
+const aiReady = () => !!AI;
+
+// ---------------------------------------------------------------- Today
+function screenToday() {
+  const p = profile(), today = todayKey(), wk = weekOf(today), t = weekTotals(wk);
+  const budget = weekBudget(wk);
+  const di = dayIdx(today);
+  const plan = activePlan(wk);
+  const dayPlan = plan && plan.days && plan.days[di];
+  const remaining = budget != null ? budget - t.flexSpent : null;
+  const dailyLeft = remaining != null ? remaining / (7 - di) : null;
+  const dailyCap = dayPlan && dayPlan.spend_cap ? dayPlan.spend_cap : budget ? budget / 7 : null;
+  const spentToday = round2(t.flexByDay[di]);
+  const ym = curYM(), mp = monthPlan(ym), hasSalary = !!mp.income;
+  const checkin = t.d.checkins[today];
+  const openT = tasks().filter((x) => x.status === "open");
+  const overdue = openT.filter((x) => x.dueAt && x.dueAt < today);
+  const dueSoon = openT.slice().sort(byDue).slice(0, 3);
+
+  let h = `<div class="top"><div><p class="eyebrow">${esc(fmtDate(today, { weekday: "long", day: "numeric", month: "long" }))}</p><h1>${p.name ? "Hey " + esc(p.name.split(" ")[0]) : "Your week"}</h1></div>
+    <button class="round" data-act="sheet" data-arg="settings" aria-label="Settings">${ICON.gear}</button></div>`;
+
+  if (!hasSalary) h += `<button class="banner" data-act="tab" data-arg="money"><span>${moneyDoc().costs.length ? `Enter your ${esc(monthLabel(ym).split(" ")[0])} salary to see what you can save.` : "Add your monthly costs once, then just enter your salary each month."}</span><b>Money →</b></button>`;
+  if (!p.name) h += `<button class="banner" data-act="sheet" data-arg="settings"><span>Set your name and currency.</span><b>Set up →</b></button>`;
+  if (!checkin) h += `<button class="banner warn" data-act="goLog"><span>You haven't checked in today. Log what you did and what you spent.</span><b>Log →</b></button>`;
+  if (!planDoc(wk)) h += `<button class="banner" data-act="goWeek" data-arg="plan"><span>No plan for this week yet. Set your budget and game plan.</span><b>Plan →</b></button>`;
+  if (di >= 4 && !reviewDoc(wk)) h += `<button class="banner" data-act="goWeek" data-arg="review"><span>It's ${DAYS_FULL[di]}. Run your weekly review to see where it went.</span><b>Review →</b></button>`;
+
+  h += `<div class="stats">
+    ${stat("Spent this week", money(t.flexSpent), budget ? "of " + money(budget) + " budget" : "no budget set", budget && t.flexSpent > budget ? "bad" : "")}
+    ${stat("Spent today", money(spentToday), dailyCap ? "cap " + money(dailyCap) + " today" : "", dailyCap && spentToday > dailyCap ? "bad" : "")}
+    ${stat("Left to spend", remaining != null ? money(remaining) : "—", dailyLeft != null ? money(Math.max(0, dailyLeft)) + "/day for " + (7 - di) + " days" : "set a weekly plan", remaining != null ? (remaining < 0 ? "bad" : "good") : "")}
+    ${stat("Worked", t.workHours + "h", p.hourlyRate ? money(t.earned) + " earned" : "add your hourly rate", "")}
+  </div>`;
+  if (hasSalary) h += `<button class="month-card" data-act="tab" data-arg="money"><span><span class="eyebrow">${esc(monthLabel(ym).split(" ")[0])}</span><br>Move to savings · ${money(mp.allowance)}/week to spend<br><span class="hchip" data-l="${moneyHealth(mp).level}">${HEALTH_LABEL[moneyHealth(mp).level]}</span></span><b>${money(mp.save)}</b></button>`;
+
+  if (dayPlan) {
+    h += `<section class="card"><div class="ghead"><h2>Today's plan</h2>${dayPlan.spend_cap ? `<span class="num muted">cap ${money(dayPlan.spend_cap)}</span>` : ""}</div>
+      <p><b>${esc(dayPlan.focus)}</b></p>
+      ${dayPlan.tasks && dayPlan.tasks.length ? `<ul class="plain">${dayPlan.tasks.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+      ${dayPlan.meals ? `<p class="small muted">Eating: ${esc(dayPlan.meals)}</p>` : ""}</section>`;
+  }
+
+  // Coach's read
+  const ins = t.d.insight && t.d.insight.date === today ? t.d.insight.text : null;
+  h += `<section class="card"><div class="ghead"><h2>Coach's read</h2>${ins && aiReady() && !S.insightBusy ? `<button class="link" data-act="insight">Refresh</button>` : ""}</div>`;
+  if (S.insightBusy) h += `<p class="thinking">Reading your week…</p>`;
+  else if (ins) h += `<div class="md">${md(ins)}</div>`;
+  else h += `<p class="muted small">A quick read of your week so far and one thing to do today.</p><button class="secondary" data-act="insight" ${aiReady() ? "" : "disabled"}>Get today's read</button>`;
+  if (S.insightErr) h += `<p class="errbox">${esc(S.insightErr)}</p>`;
+  h += aiStatusNote() + `</section>`;
+
+  // chart
+  h += `<section class="card chart"><div class="ghead"><h2>Spending by day</h2><span class="small muted">${esc(fmtDate(wk, { day: "numeric", month: "short" }))} – ${esc(fmtDate(addDays(wk, 6), { day: "numeric", month: "short" }))}</span></div>${dayChart(t.flexByDay, dailyCap || (budget ? budget / 7 : null), di)}</section>`;
+
+  // where it went
+  const cats = Object.entries(t.byCategory).sort((a, b) => b[1] - a[1]);
+  h += `<section class="card"><h2>Where it went</h2>`;
+  if (!cats.length) h += `<p class="empty">Nothing logged this week yet. Add your first expense in Log.</p>`;
+  else {
+    const max = cats[0][1];
+    h += `<div class="bars">${cats.map(([c, v]) => `<div class="brow"><span>${esc(EXP_CATS[c] || c)}</span><b class="num">${money(v)}</b><span class="pct num">${Math.round(v / t.spent * 100)}%</span><div class="track"><i style="width:${(v / max * 100).toFixed(1)}%"></i></div></div>`).join("")}</div>
+      <p class="small muted">Wants ${money(t.want)} · Needs ${money(t.need)}</p>`;
+  }
+  h += `</section>`;
+
+  // tasks
+  h += `<section class="card"><div class="ghead"><h2>Tasks</h2><button class="link" data-act="tab" data-arg="tasks">All tasks</button></div>
+    <div class="row"><span class="chip">${openT.length} open</span>${overdue.length ? `<span class="chip" style="color:var(--bad)">${overdue.length} overdue</span>` : ""}</div>
+    ${dueSoon.length ? `<ul class="list">${dueSoon.map(taskRow).join("")}</ul>` : `<p class="empty">No open tasks.</p>`}</section>`;
+  return h;
+}
+function stat(l, v, s, tone) { return `<div class="stat" data-tone="${tone}"><span class="l">${esc(l)}</span><span class="v">${v}</span><span class="s">${esc(s)}</span></div>`; }
+function dayChart(byDay, cap, todayIdx) {
+  const W = 320, H = 170, top = 14, bottom = 22, left = 4, right = 4;
+  const maxV = Math.max(...byDay, cap || 0, 1) * 1.12;
+  const ch = H - top - bottom, bw = (W - left - right) / 7;
+  const y = (v) => top + ch - (v / maxV) * ch;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Spending per day this week">`;
+  s += `<line x1="${left}" x2="${W - right}" y1="${top + ch}" y2="${top + ch}" stroke="var(--line)" />`;
+  byDay.forEach((v, i) => {
+    const x = left + i * bw + bw * 0.2, w = bw * 0.6, yy = y(v), hgt = top + ch - yy;
+    const over = cap && v > cap;
+    const fill = v ? (over ? "var(--bad)" : "var(--accent)") : "var(--fill)";
+    s += `<rect x="${x.toFixed(1)}" y="${(v ? yy : top + ch - 3).toFixed(1)}" width="${w.toFixed(1)}" height="${(v ? hgt : 3).toFixed(1)}" rx="4" fill="${fill}" />`;
+    if (v) s += `<text x="${(x + w / 2).toFixed(1)}" y="${(yy - 4).toFixed(1)}" text-anchor="middle">${esc(Math.round(v))}</text>`;
+    s += `<text x="${(x + w / 2).toFixed(1)}" y="${H - 6}" text-anchor="middle" style="${i === todayIdx ? "fill:var(--fg);font-weight:700" : ""}">${DAYS[i]}</text>`;
+  });
+  if (cap) s += `<line x1="${left}" x2="${W - right}" y1="${y(cap).toFixed(1)}" y2="${y(cap).toFixed(1)}" stroke="var(--muted)" stroke-dasharray="4 4" /><text x="${W - right}" y="${(y(cap) - 4).toFixed(1)}" text-anchor="end">cap ${esc(Math.round(cap))}</text>`;
+  return s + `</svg>`;
+}
+
+// ---------------------------------------------------------------- Log
+function screenLog() {
+  const k = S.logDate, today = todayKey();
+  const label = k === today ? "Today" : k === addDays(today, -1) ? "Yesterday" : fmtDate(k, { weekday: "long" });
+  const d = weekDoc(weekOf(k));
+  let h = `<div class="top"><div><h1>Log</h1></div><span class="sync" id="sync"></span></div>
+    <div class="datebar"><button class="round" data-act="logDay" data-arg="-1" aria-label="Previous day">‹</button>
+      <div><b>${esc(label)}</b><small>${esc(fmtDate(k, { day: "numeric", month: "long", year: "numeric" }))}</small></div>
+      <button class="round" data-act="logDay" data-arg="1" aria-label="Next day" ${k >= today ? "disabled" : ""}>›</button></div>
+    <div class="seg">${[["spend", "Spend"], ["time", "Time"], ["work", "Work"], ["checkin", "Check-in"]].map(([m, l]) => `<button data-act="logMode" data-arg="${m}" aria-pressed="${S.logMode === m}">${l}</button>`).join("")}</div>`;
+
+  if (S.logMode === "spend") {
+    const items = d.expenses.filter((e) => e.date === k);
+    h += `<form class="card form" data-form="expense" autocomplete="off">
+      <label class="amount"><span>${curSymbol()}</span><input id="f-amount" name="amount" inputmode="decimal" placeholder="0.00" aria-label="Amount" required></label>
+      <div class="chips" role="radiogroup" aria-label="Category">${Object.entries(EXP_CATS).map(([c, l]) => `<label class="chip"><input type="radio" name="category" value="${c}" ${c === S.lastCat ? "checked" : ""}>${l}</label>`).join("")}</div>
+      <input class="in" id="f-merchant" name="merchant" placeholder="Where? e.g. Albert Heijn, Thuisbezorgd">
+      <div class="seg" role="radiogroup" aria-label="Need or want">${[["need", "Need"], ["want", "Want"], ["unknown", "Not sure"]].map(([v, l], i) => `<label><input type="radio" name="necessity" value="${v}" ${i === 2 ? "checked" : ""}>${l}</label>`).join("")}</div>
+      <button class="primary">Add expense</button></form>
+      <section class="card"><div class="ghead"><h3>Spent ${k === today ? "today" : k === addDays(today, -1) ? "yesterday" : "that day"}</h3><b class="num">${money(sum(items, (e) => e.amount))}</b></div>
+      ${items.length ? `<ul class="list">${items.map((e) => `<li><div class="grow"><b>${esc(e.merchant || EXP_CATS[e.category])}</b><small>${esc(EXP_CATS[e.category] || e.category)} · ${e.necessity === "unknown" ? "not sure" : e.necessity}</small></div><span class="num">${money(e.amount, true)}</span><button class="x" data-act="delItem" data-arg="expenses:${e.id}" aria-label="Delete">×</button></li>`).join("")}</ul>` : `<p class="empty">Nothing spent yet. Every euro you log makes the Friday review sharper.</p>`}</section>`;
+  } else if (S.logMode === "time") {
+    const items = d.activities.filter((a) => a.date === k);
+    h += `<form class="card form" data-form="activity" autocomplete="off">
+      <div class="chips" role="radiogroup" aria-label="Category">${Object.entries(ACT_CATS).map(([c, l], i) => `<label class="chip"><input type="radio" name="category" value="${c}" ${i === 0 ? "checked" : ""}>${l}</label>`).join("")}</div>
+      <input class="in" id="f-desc" name="description" placeholder="What did you do?" required>
+      <div class="field"><span>How long</span><div class="chips">${[15, 30, 45, 60, 90, 120, 180].map((m, i) => `<label class="chip"><input type="radio" name="minutes" value="${m}" ${m === 60 ? "checked" : ""}>${m < 60 ? m + "m" : m / 60 + "h"}</label>`).join("")}</div>
+        <input class="in" id="f-custom-min" name="customMin" inputmode="numeric" placeholder="Or minutes, e.g. 25"></div>
+      <div class="field"><span>How productive was it?</span><div class="seg">${[1, 2, 3, 4, 5].map((n) => `<label><input type="radio" name="productivity" value="${n}" ${n === 3 ? "checked" : ""}>${n}</label>`).join("")}</div></div>
+      <button class="primary">Add time block</button></form>
+      <section class="card"><div class="ghead"><h3>Time logged</h3><b class="num">${fmtMin(sum(items, (a) => a.durationMin))}</b></div>
+      ${items.length ? `<ul class="list">${items.map((a) => `<li><div class="grow"><b>${esc(a.description)}</b><small>${esc(ACT_CATS[a.category] || a.category)} · productivity ${a.productivity}/5</small></div><span class="num">${fmtMin(a.durationMin)}</span><button class="x" data-act="delItem" data-arg="activities:${a.id}" aria-label="Delete">×</button></li>`).join("")}</ul>` : `<p class="empty">No time logged. Add what you did in blocks; the review links your hours to your spending.</p>`}</section>`;
+  } else if (S.logMode === "work") {
+    const items = d.work.filter((w) => w.date === k);
+    const rate = profile().hourlyRate;
+    h += `<form class="card form" data-form="work" autocomplete="off">
+      <div class="field"><span>Hours worked</span><input class="in" id="f-hours" name="hours" inputmode="decimal" placeholder="e.g. 7,5" required></div>
+      <input class="in" id="f-wnotes" name="notes" placeholder="Notes (optional)">
+      <p class="small muted">${rate ? `At ${money(rate, true)}/hour.` : `Add your hourly rate in Settings to see what you earned.`}</p>
+      <button class="primary">Add hours</button></form>
+      <section class="card"><div class="ghead"><h3>Worked</h3><b class="num">${round2(sum(items, (w) => w.hours))}h</b></div>
+      ${items.length ? `<ul class="list">${items.map((w) => `<li><div class="grow"><b>${w.hours} hours</b>${w.notes ? `<small>${esc(w.notes)}</small>` : ""}</div>${rate ? `<span class="num">${money(w.hours * rate)}</span>` : ""}<button class="x" data-act="delItem" data-arg="work:${w.id}" aria-label="Delete">×</button></li>`).join("")}</ul>` : `<p class="empty">No hours logged for this day.</p>`}</section>`;
+  } else {
+    const c = d.checkins[k];
+    const spent = sum(d.expenses.filter((e) => e.date === k), (e) => e.amount);
+    const mins = sum(d.activities.filter((a) => a.date === k), (a) => a.durationMin);
+    const hrs = sum(d.work.filter((w) => w.date === k), (w) => w.hours);
+    h += `<section class="card"><h2>${esc(label)} in numbers</h2><div class="kv"><div><small>Spent</small><b>${money(spent)}</b></div><div><small>Time logged</small><b>${fmtMin(mins)}</b></div><div><small>Worked</small><b>${round2(hrs)}h</b></div></div></section>
+      <form class="card form" data-form="checkin">
+      <div class="field"><span>How did it go?</span><div class="seg">${MOODS.map((m, i) => `<label><input type="radio" name="mood" value="${i + 1}" ${c && c.mood === i + 1 ? "checked" : (!c && i === 2 ? "checked" : "")}>${m}</label>`).join("")}</div></div>
+      <textarea class="in" id="f-cnotes" name="notes" placeholder="Anything worth remembering? What triggered spending?">${esc(c && c.notes || "")}</textarea>
+      <button class="primary">${c ? "Update check-in" : "Finish the day"}</button>
+      ${c ? `<p class="small muted">Checked in ✓</p>` : ""}</form>`;
+  }
+  return h;
+}
+const fmtMin = (m) => m >= 60 ? (Math.floor(m / 60) + "h" + (m % 60 ? " " + (m % 60) + "m" : "")) : m + "m";
+
+// ---------------------------------------------------------------- Tasks
+const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
+function byDue(a, b) { return (a.dueAt || "9999") < (b.dueAt || "9999") ? -1 : (a.dueAt || "9999") > (b.dueAt || "9999") ? 1 : PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority]; }
+function taskRow(x) {
+  const today = todayKey();
+  const done = x.status === "done";
+  const dueTxt = x.dueAt ? (x.dueAt === today ? "Today" : x.dueAt === addDays(today, 1) ? "Tomorrow" : fmtDate(x.dueAt)) : "";
+  return `<li class="${done ? "done" : ""}"><button class="check" role="checkbox" aria-checked="${done}" data-act="toggleTask" data-arg="${x.id}" aria-label="Mark ${esc(x.title)} ${done ? "not done" : "done"}">${done ? ICON.tick : ""}</button>
+    <div class="grow"><b>${esc(x.title)}</b>${dueTxt ? `<span class="due ${!done && x.dueAt < today ? "over" : ""}">${!done && x.dueAt < today ? "Overdue · " : ""}${esc(dueTxt)}</span>` : ""}</div>
+    <span class="pri" data-p="${x.priority}" title="${x.priority} priority"></span>
+    <button class="x" data-act="delTask" data-arg="${x.id}" aria-label="Delete task">×</button></li>`;
+}
+function screenTasks() {
+  const all = tasks();
+  const open = all.filter((x) => x.status === "open").sort(byDue);
+  const done = all.filter((x) => x.status === "done").sort((a, b) => (b.completedAt || "").localeCompare(a.completedAt || ""));
+  return `<button class="link" data-act="tab" data-arg="today">‹ Today</button><div class="top" style="padding-top:0"><div><h1>Tasks</h1></div><span class="sync" id="sync"></span></div>
+    <form class="card form" data-form="task" autocomplete="off">
+      <input class="in" id="f-task" name="title" placeholder="Add a task" required>
+      <div class="two"><label class="field"><span>Due</span><input class="in" id="f-due" type="date" name="due"></label>
+      <div class="field"><span>Priority</span><div class="seg">${[["low", "Low"], ["medium", "Med"], ["high", "High"]].map(([v, l]) => `<label><input type="radio" name="priority" value="${v}" ${v === "medium" ? "checked" : ""}>${l}</label>`).join("")}</div></div></div>
+      <button class="primary">Add task</button></form>
+    <section class="card"><div class="ghead"><h2>Open</h2><span class="muted num">${open.length}</span></div>
+      ${open.length ? `<ul class="list">${open.map(taskRow).join("")}</ul>` : `<p class="empty">Nothing open. Add a task above, or build your week in Week to get a plan.</p>`}</section>
+    ${done.length ? `<section class="card"><div class="ghead"><h2>Done</h2><button class="link" data-act="toggleDone">${S.doneOpen ? "Hide" : "Show " + done.length}</button></div>
+      ${S.doneOpen ? `<ul class="list">${done.slice(0, 30).map(taskRow).join("")}</ul>` : ""}</section>` : ""}`;
+}
+
+// ---------------------------------------------------------------- Money
+const COST_SUGGEST = ["Rent / mortgage", "Health insurance", "Energy", "Water", "Internet & TV", "Phone", "Insurance", "Municipal taxes", "Streaming", "Gym", "Transport pass"];
+const ALLOW_PRESETS = [["Lean", 60], ["Balanced", 100], ["Comfy", 150]];
+const amtVal = (n) => n ? String(round2(n)).replace(".", ",") : "";
+function screenMoney() {
+  const ym = S.moneyYM, m = monthDoc(ym) || {}, md = moneyDoc();
+  const have = new Set(md.costs.map((c) => (c.name || "").toLowerCase()));
+  const sugg = COST_SUGGEST.filter((x) => !have.has(x.toLowerCase())).slice(0, 8);
+  return `<div class="top"><div><h1>Money</h1></div><span class="sync" id="sync"></span></div>
+    <div class="datebar"><button class="round" data-act="moneyMonth" data-arg="-1" aria-label="Previous month">‹</button>
+      <div><b>${esc(monthLabel(ym))}</b><small>${ym === curYM() ? "This month" : ym > curYM() ? "Next month" : "Earlier month"}</small></div>
+      <button class="round" data-act="moneyMonth" data-arg="1" aria-label="Next month" ${ym >= shiftYM(curYM(), 1) ? "disabled" : ""}>›</button></div>
+    <section class="card form">
+      <div class="field"><span>Salary received (net)</span><label class="amount"><span>${curSymbol()}</span><input id="m-salary" inputmode="decimal" placeholder="0" value="${amtVal(m.salary)}" aria-label="Salary received"></label></div>
+      <label class="field"><span>Other income this month (optional)</span><input class="in" id="m-extra" inputmode="decimal" placeholder="Holiday pay, bonus, refund" value="${amtVal(m.extra)}"></label>
+    </section>
+    <section class="card" id="m-result">${moneyResultHTML(ym)}</section>
+    <section class="card"><div class="ghead"><h2>Monthly costs</h2><b class="num" id="m-costs-total">${money(sum(md.costs, (c) => c.amount), true)}</b></div>
+      <p class="small muted">Fill these in once. They're remembered and taken off every salary.</p>
+      ${md.costs.length ? `<div class="costs">${md.costs.map((c) => `<div class="cost"><input class="in" id="c-n-${c.id}" data-cost="${c.id}" data-f="name" value="${esc(c.name)}" placeholder="Name" aria-label="Cost name">
+        <label class="money-in"><span>${curSymbol()}</span><input id="c-a-${c.id}" data-cost="${c.id}" data-f="amount" inputmode="decimal" value="${amtVal(c.amount)}" placeholder="0" aria-label="Monthly amount"></label>
+        <button class="x" data-act="delCost" data-arg="${c.id}" aria-label="Remove ${esc(c.name || "cost")}">×</button></div>`).join("")}</div>` : `<p class="empty">No monthly costs yet. Tap a suggestion or add your own.</p>`}
+      <button class="secondary" data-act="addCost">+ Add a cost</button>
+      ${sugg.length ? `<div class="chips">${sugg.map((x) => `<button class="chip" data-act="addCost" data-arg="${esc(x)}">+ ${esc(x)}</button>`).join("")}</div>` : ""}
+    </section>
+    <section class="card"><div class="ghead"><h2>Spending money</h2><b class="num" id="m-allow-out">${money(md.allowance)}/week</b></div>
+      <p class="small muted">For groceries, eating out and everything else you log. Everything above this goes to savings. It's also your weekly budget on Today.</p>
+      <div class="seg" id="m-presets">${ALLOW_PRESETS.map(([l, v]) => `<button data-act="allowPreset" data-arg="${v}" aria-pressed="${md.allowance === v}" title="${l}">${money(v)}</button>`).join("")}</div>
+      <input type="range" id="m-allow" min="0" max="400" step="5" value="${md.allowance}" aria-label="Spending money per week">
+    </section>
+    ${monthHistoryHTML()}`;
+}
+function moneyResultHTML(ym) {
+  const p = monthPlan(ym), goal = profile().savingsGoal;
+  if (!p.income) return `<div class="hero"><span class="eyebrow">Move to savings</span><span class="big">—</span></div>
+    <p class="small muted">Enter the salary you received for ${esc(monthLabel(ym))}. Your monthly costs (${money(p.costs)}) and spending money (${money(p.spend)}) come off first; the rest goes to savings.</p>`;
+  const tot = Math.max(p.income, p.costs + p.spend) || 1, w = (v) => (Math.max(0, v) / tot * 100).toFixed(1);
+  const lvl = p.rate >= 0.3 ? "keep" : p.rate >= 0.15 ? "reduce" : "cut";
+  return `<div class="hero"><span class="eyebrow">Move to savings</span><span class="big">${money(p.save)}</span>
+      <div class="row small"><span class="pill" data-v="${lvl}">${Math.round(p.rate * 100)}% of income</span>
+      ${goal ? (p.save >= goal ? `<span style="color:var(--accent);font-weight:600">Goal of ${money(goal)} reached</span>` : `<span class="muted">${money(goal - p.save)} short of your ${money(goal)} goal</span>`) : ""}
+      ${p.save > 0 ? `<button class="link" data-act="copySave">Copy amount</button>` : ""}</div></div>
+    ${pieHTML(p)}
+    <ul class="list lines">
+      <li class="total"><span>Income</span><span class="num">${money(p.income)}</span></li>
+      <li><span class="dot" style="background:var(--muted)"></span><span>Monthly costs</span><span class="num">− ${money(p.costs)}</span></li>
+      <li><span class="dot" style="background:var(--warn)"></span><span>Spending money <small>${money(p.allowance)}/week</small></span><span class="num">− ${money(p.spend)}</span></li>
+      <li class="total"><span class="dot" style="background:var(--accent)"></span><span>Savings</span><span class="num" style="color:var(--accent)">${money(p.save)}</span></li>
+    </ul>
+    ${p.short ? `<p class="errbox">Your costs and spending money are ${money(p.short)} more than your income this month. Lower your spending money or cut a cost.</p>` : ""}
+    ${healthHTML(p)}`;
+}
+const HEALTH_LABEL = { good: "Good with money", ok: "Okay, with room to improve", bad: "Needs attention" };
+const EXTRA_RE = /stream|netflix|spotify|disney|videoland|hbo|prime|youtube|gym|sport|fitness|subscri|abonnement|magazine|krant|app|game|playstation|xbox/i;
+function moneyHealth(p) {
+  const md = moneyDoc(), inc = p.income || 1;
+  const costPct = p.costs / inc * 100, spendPct = p.spend / inc * 100, savePct = p.save / inc * 100;
+  let score = (savePct >= 20 ? 2 : savePct >= 10 ? 1 : 0) + (costPct <= 50 ? 2 : costPct <= 60 ? 1 : 0) + (spendPct <= 30 ? 2 : spendPct <= 40 ? 1 : 0);
+  if (p.short) score = 0;
+  const level = score >= 5 ? "good" : score >= 3 ? "ok" : "bad";
+  const tips = [];
+  if (p.short) {
+    const perWeek = Math.ceil(p.short / p.weeks / 5) * 5;
+    tips.push(`You're ${money(p.short)} short this month. Lower your spending money by about ${money(perWeek)} a week, or cut a monthly cost.`);
+  } else if (savePct < 20) {
+    const need = inc * 0.2 - p.save, perWeek = Math.ceil(need / p.weeks / 5) * 5;
+    tips.push(`Aim to save at least 20% (${money(inc * 0.2)}). You need ${money(need)} more: for example ${money(perWeek)} less spending money per week.`);
+  }
+  if (costPct > 50) {
+    const top = md.costs.slice().sort((a, b) => b.amount - a.amount)[0];
+    tips.push(`Monthly costs take ${Math.round(costPct)}% of your income (aim for 50% or less). ${top ? `Your biggest is ${esc(top.name || "a cost")} at ${money(top.amount)}. ` : ""}Cutting ${money(p.costs - inc * 0.5)} gets you to 50%.`);
+  }
+  const extras = md.costs.filter((c) => c.amount > 0 && EXTRA_RE.test(c.name || ""));
+  if (extras.length && level !== "good") tips.push(`Check your extras: ${extras.map((c) => `${esc(c.name)} ${money(c.amount)}`).join(", ")}. Together that's ${money(sum(extras, (c) => c.amount) * 12)} a year.`);
+  if (spendPct > 30) tips.push(`Spending money is ${Math.round(spendPct)}% of your income (aim for 30% or less). Every ${money(10)} less per week adds ${money(10 * p.weeks)} to savings this month.`);
+  if (!tips.length) tips.push(`You're in great shape. Set up an automatic transfer of ${money(p.save)} to your savings account on payday, so it happens without thinking.`);
+  return { level, costPct, spendPct, savePct, tips: tips.slice(0, 3) };
+}
+function pieHTML(p) {
+  const inc = p.income || 1;
+  const costs = Math.min(p.costs, inc), spend = Math.max(0, Math.min(p.spend, inc - costs)), save = p.save;
+  const h = moneyHealth(p);
+  const parts = [["Monthly payments", costs, "var(--muted)", h.costPct, "goal: max 50%", h.costPct > 50], ["Free to spend", spend, "var(--warn)", h.spendPct, "goal: max 30%", h.spendPct > 30], ["Savings", save, "var(--accent)", h.savePct, "goal: at least 20%", h.savePct < 20]];
+  const r = 52, C = 2 * Math.PI * r;
+  let off = 0, arcs = "";
+  parts.forEach(([, v, color]) => {
+    const len = C * Math.max(0, v) / inc;
+    if (len > 0.5) arcs += `<circle cx="70" cy="70" r="${r}" fill="none" stroke="${color}" stroke-width="22" stroke-dasharray="${len.toFixed(2)} ${(C - len).toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 70 70)"/>`;
+    off += len;
+  });
+  return `<div class="pie"><svg viewBox="0 0 140 140" role="img" aria-label="Payments ${Math.round(h.costPct)}%, free to spend ${Math.round(h.spendPct)}%, savings ${Math.round(h.savePct)}%">
+      <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--fill)" stroke-width="22"/>${arcs}
+      <text x="70" y="70" text-anchor="middle" font-size="24" font-weight="700">${Math.round(h.savePct)}%</text>
+      <text x="70" y="88" text-anchor="middle" font-size="11" style="fill:var(--muted)">saved</text></svg>
+    <ul class="legend">${parts.map(([l, v, color, pct, aim, off2]) => `<li><span class="dot" style="background:${color}"></span><span>${l}</span><b>${Math.round(pct)}%</b><small class="${off2 ? "off" : ""}">${money(v)} · ${aim}</small></li>`).join("")}</ul></div>`;
+}
+function healthHTML(p) {
+  const h = moneyHealth(p);
+  return `<div class="health" data-l="${h.level}"><span class="hdot"></span><div><b>${HEALTH_LABEL[h.level]}</b><small>Savings ${Math.round(h.savePct)}% · Payments ${Math.round(h.costPct)}% · Spending ${Math.round(h.spendPct)}%</small></div></div>
+    <div><h3 style="margin-bottom:8px">${h.level === "good" ? "Keep it up" : "Where to improve"}</h3><ul class="tips">${h.tips.map((t) => `<li><span>${t}</span></li>`).join("")}</ul></div>`;
+}
+function monthHistoryHTML() {
+  const keys = Object.keys(DOCS).filter((k) => k.startsWith("month-") && DOCS[k] && (DOCS[k].salary || DOCS[k].extra)).map((k) => k.slice(6)).sort().reverse();
+  if (!keys.length) return "";
+  const year = S.moneyYM.slice(0, 4);
+  const yearSaved = sum(keys.filter((k) => k.startsWith(year)), (k) => DOCS["month-" + k].save || 0);
+  return `<section class="card" id="m-history"><div class="ghead"><h2>Past months</h2><span class="small muted">Saved in ${year}: <b style="color:var(--accent)">${money(yearSaved)}</b></span></div>
+    <ul class="list">${keys.map((k) => { const m = DOCS["month-" + k], inc = (m.salary || 0) + (m.extra || 0); return `<li><button class="link" style="flex:1;text-align:left;color:var(--fg);font-weight:${k === S.moneyYM ? 700 : 500}" data-act="pickMonth" data-arg="${k}">${esc(monthLabel(k, true))}</button><span class="small muted num">${inc ? Math.round((m.save || 0) / inc * 100) : 0}%</span><b class="num" style="color:var(--accent);min-width:80px;text-align:right">${money(m.save || 0)}</b></li>`; }).join("")}</ul></section>`;
+}
+function updateMoneyBits() {
+  const md = moneyDoc();
+  const r = $("#m-result"); if (r) r.innerHTML = moneyResultHTML(S.moneyYM);
+  const t = $("#m-costs-total"); if (t) t.textContent = money(sum(md.costs, (c) => c.amount), true);
+  const a = $("#m-allow-out"); if (a) a.textContent = money(md.allowance) + "/week";
+  document.querySelectorAll("#m-presets button").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.arg) === md.allowance)));
+}
+
+// ---------------------------------------------------------------- Week
+function weekLabel(wk) {
+  const cur = weekOf(todayKey());
+  if (wk === cur) return "This week";
+  if (wk === addDays(cur, -7)) return "Last week";
+  if (wk === addDays(cur, 7)) return "Next week";
+  return "Week of " + fmtDate(wk, { day: "numeric", month: "short" });
+}
+function screenWeek() {
+  const wk = S.weekSel, cur = weekOf(todayKey());
+  let h = `<div class="top"><div><h1>Week</h1></div><span class="sync" id="sync"></span></div>
+    <div class="seg"><button data-act="weekMode" data-arg="plan" aria-pressed="${S.weekMode === "plan"}">Monday plan</button><button data-act="weekMode" data-arg="review" aria-pressed="${S.weekMode === "review"}">Friday review</button></div>
+    <div class="datebar"><button class="round" data-act="weekShift" data-arg="-7" aria-label="Previous week">‹</button>
+      <div><b>${esc(weekLabel(wk))}</b><small>${esc(fmtDate(wk, { day: "numeric", month: "short" }))} – ${esc(fmtDate(addDays(wk, 6), { day: "numeric", month: "short" }))}</small></div>
+      <button class="round" data-act="weekShift" data-arg="7" aria-label="Next week" ${wk >= addDays(cur, 7) ? "disabled" : ""}>›</button></div>`;
+  h += S.weekMode === "plan" ? planView(wk) : reviewView(wk);
+  return h;
+}
+function planView(wk) {
+  const p = planDoc(wk);
+  const i = (p && p.intake) || {};
+  let h = "";
+  if (p && p.output && !S.planEdit) {
+    h += planOutputHTML(p.output, wk);
+    h += `<div class="row"><button class="secondary" data-act="planEdit">Change inputs and rebuild</button><button class="secondary" data-act="planTasks">Add plan tasks to my list</button></div>`;
+    return h;
+  }
+  const prevR = reviewDoc(addDays(wk, -7));
+  const sug = prevR && prevR.strategist && prevR.strategist.next_week_plan;
+  h += `<form class="card form" data-form="plan" autocomplete="off">
+    <h2>Set up the week</h2>
+    <p class="small muted">The Budget Architect checks these against what you really spent in recent weeks, the Game Plan Coach maps out each day, and the Meal Strategist plans cheap lunches and dinners.</p>
+    ${sug ? `<p class="warnbox small">Last Friday's review suggested ${money(sug.daily_lunch_budget, true)} lunch and ${money(sug.daily_dinner_budget, true)} dinner per day, capped at ${money(sug.weekly_spend_cap)} for the week.</p>` : ""}
+    <label class="field"><span>Income expected this week</span><input class="in" id="p-income" name="incomeExpected" inputmode="decimal" value="${i.incomeExpected || ""}" placeholder="${curSymbol()} 0"></label>
+    <div class="two"><label class="field"><span>Lunch per day</span><input class="in" id="p-lunch" name="lunchBudget" inputmode="decimal" value="${i.lunchBudget || (sug ? sug.daily_lunch_budget : "")}" placeholder="${curSymbol()} 8"></label>
+    <label class="field"><span>Dinner per day</span><input class="in" id="p-dinner" name="dinnerBudget" inputmode="decimal" value="${i.dinnerBudget || (sug ? sug.daily_dinner_budget : "")}" placeholder="${curSymbol()} 10"></label></div>
+    <label class="field"><span>Everything else this week</span><input class="in" id="p-other" name="otherBudget" inputmode="decimal" value="${i.otherBudget || ""}" placeholder="${curSymbol()} 60"></label>
+    <label class="field"><span>Goals, one per line</span><textarea class="in" id="p-goals" name="goals" placeholder="Save ${curSymbol()}100&#10;Gym 3 times">${esc((i.goals || []).join("\n"))}</textarea></label>
+    <label class="field"><span>Tasks this week, one per line</span><textarea class="in" id="p-tasks" name="plannedTasks" placeholder="Finish report&#10;Call landlord">${esc((i.plannedTasks || []).join("\n"))}</textarea></label>
+    ${S.planBusy ? `<p class="thinking">Budget Architect, Game Plan Coach and Meal Strategist are working. This can take a minute…</p>` : `<button class="primary" ${aiReady() ? "" : "disabled"}>Build my week</button>`}
+    ${S.planErr ? `<p class="errbox">${esc(S.planErr)}</p>` : ""}
+    ${aiStatusNote()}
+    ${p && p.output ? `<button class="link" type="button" data-act="planEditCancel">Back to the plan</button>` : ""}
+  </form>`;
+  return h;
+}
+function planOutputHTML(o, wk) {
+  const b = o.budget_advice || {}, g = o.game_plan || {};
+  const isCur = wk === weekOf(todayKey());
+  let h = `<section class="card"><h2>Budget</h2>
+    <div class="kv"><div><small>Weekly cap</small><b>${money(b.weekly_spend_cap)}</b></div><div><small>Lunch / day</small><b>${money(b.recommended_daily_lunch, true)}</b></div><div><small>Dinner / day</small><b>${money(b.recommended_daily_dinner, true)}</b></div><div><small>Other / week</small><b>${money(b.recommended_weekly_other)}</b></div><div><small>Projected savings</small><b style="color:var(--accent)">${money(b.projected_savings)}</b></div></div>
+    ${b.reasoning ? `<p>${esc(b.reasoning)}</p>` : ""}
+    ${(b.warnings || []).map((w) => `<p class="warnbox">${esc(w)}</p>`).join("")}</section>`;
+  h += gamePlanHTML(g, isCur ? dayIdx(todayKey()) : -1, "Game plan");
+  const meals = (o.meals || []).slice().sort((a, b) => a.day_of_week - b.day_of_week || (a.meal === "lunch" ? -1 : 1));
+  if (meals.length) h += mealsHTML(meals, o.calorie_savings_total, null);
+  if (o.notes) h += `<section class="card"><h3>Notes</h3><p>${esc(o.notes)}</p></section>`;
+  return h;
+}
+function gamePlanHTML(g, todayI, title) {
+  return `<section class="card"><div class="ghead"><h2>${esc(title)}</h2>${g.weekly_spend_cap ? `<span class="num muted">cap ${money(g.weekly_spend_cap)}</span>` : ""}</div>
+    ${g.theme ? `<p><b>${esc(g.theme)}</b></p>` : ""}
+    <div class="kv"><div><small>Lunch / day</small><b>${money(g.daily_lunch_budget, true)}</b></div><div><small>Dinner / day</small><b>${money(g.daily_dinner_budget, true)}</b></div><div><small>Savings target</small><b style="color:var(--accent)">${money(g.savings_target)}</b></div></div>
+    ${g.rules && g.rules.length ? `<div><h3>Rules</h3><ul class="plain">${g.rules.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>` : ""}
+    <div>${(g.days || []).map((d, i) => `<div class="day ${i === todayI ? "now" : ""}"><div class="ghead"><h3>${esc(d.day)}${i === todayI ? " · today" : ""}</h3><span class="num small muted">cap ${money(d.spend_cap)}</span></div>
+      <p>${esc(d.focus)}</p>${d.tasks && d.tasks.length ? `<ul>${d.tasks.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${d.meals ? `<p class="small muted">Eating: ${esc(d.meals)}</p>` : ""}</div>`).join("")}</div></section>`;
+}
+function mealsHTML(meals, kcal, grocery) {
+  return `<section class="card"><div class="ghead"><h2>Meals</h2>${kcal ? `<span class="small" style="color:var(--accent);font-weight:600">${esc(Number(kcal).toLocaleString("en-GB"))} kcal saved</span>` : ""}</div>
+    ${meals.map((m) => `<details><summary><span>${DAYS[m.day_of_week] || ""} ${esc(m.meal)} · ${esc(m.name)}</span></summary><div>
+      <div class="row small"><span class="chip">${esc(m.calories)} kcal</span><span class="chip">${money(m.est_cost, true)}</span><span class="chip" style="color:var(--accent)">saves ${money(m.save_vs_eat_out, true)}</span></div>
+      ${m.ingredients && m.ingredients.length ? `<p class="small muted">${m.ingredients.map(esc).join(" · ")}</p>` : ""}
+      ${m.steps ? `<p>${esc(m.steps)}</p>` : ""}</div></details>`).join("")}
+    ${grocery && grocery.length ? `<details><summary><span>Grocery list</span></summary><div><ul class="plain">${grocery.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></details>` : ""}</section>`;
+}
+
+const AGENTS = [["spending", "Spending Forensics"], ["cashflow", "Cash Flow Analyst"], ["time", "Time & Productivity Auditor"], ["meal", "Meal & Calorie Strategist"], ["strategist", "Chief Strategist"]];
+function reviewView(wk) {
+  const r = reviewDoc(wk), t = weekTotals(wk);
+  const running = S.review && S.review.wk === wk;
+  let h = "";
+  if (running || !r) {
+    h += `<section class="card"><h2>${esc(weekLabel(wk))} so far</h2>
+      <div class="kv"><div><small>Spent</small><b>${money(t.spent)}</b></div><div><small>Expenses logged</small><b>${t.d.expenses.length}</b></div><div><small>Time logged</small><b>${fmtMin(sum(t.d.activities, (a) => a.durationMin))}</b></div><div><small>Worked</small><b>${t.workHours}h</b></div></div>
+      <p class="small muted">Four specialists read the same week in parallel: Spending Forensics, Cash Flow, Time & Productivity and Meals. Then the Chief Strategist reconciles them, grades the week and writes next week's plan.</p>
+      ${t.d.expenses.length < 3 ? `<p class="warnbox small">Only ${t.d.expenses.length} expense${t.d.expenses.length === 1 ? "" : "s"} logged this week. The review is only as good as what you log.</p>` : ""}`;
+    if (running) {
+      h += `<div class="agents">${AGENTS.map(([k, l]) => { const s = S.review.status[k] || "waiting"; return `<div class="agent" data-s="${s}"><span>${l}</span><span>${{ waiting: "Waiting", working: "Working…", done: "Done", failed: "Failed" }[s]}</span></div>`; }).join("")}</div>
+        <p class="thinking">This usually takes one to three minutes. Keep the page open.</p>`;
+    } else {
+      h += `<button class="primary" data-act="runReview" ${aiReady() ? "" : "disabled"}>${r ? "Run the review again" : "Run my weekly review"}</button>`;
+    }
+    if (S.reviewErr && S.reviewErr.wk === wk) h += `<p class="errbox">${esc(S.reviewErr.err)}</p>`;
+    h += aiStatusNote() + `</section>`;
+    if (!r || running) return h;
+  }
+  const st = r.strategist || {};
+  const rep = r.reports || {};
+  h += `<section class="card"><div class="grade"><div class="g" data-g="${esc((st.grade || "?").charAt(0))}">${esc(st.grade || "?")}</div><div><h2>Week graded</h2><p class="small muted">Reviewed ${esc(fmtDate(r.createdAt.slice(0, 10), { weekday: "short", day: "numeric", month: "short" }))}</p></div></div>
+    <div class="kv"><div><small>Spent</small><b>${money(r.totals.spent)}</b></div><div><small>Wasted</small><b style="color:var(--bad)">${money(st.wasted_spend)}</b></div><div><small>Could have saved</small><b style="color:var(--accent)">${money(st.could_have_saved)}</b></div><div><small>Worked</small><b>${r.totals.hours}h</b></div></div></section>`;
+  if (st.top_three_moves && st.top_three_moves.length) h += `<section class="card"><h2>Top three moves</h2><ol class="plain">${st.top_three_moves.map((m) => `<li>${esc(m)}</li>`).join("")}</ol></section>`;
+  if (st.narrative) h += `<section class="card"><h2>Post-mortem</h2><div class="md">${md(st.narrative)}</div></section>`;
+  h += `<section class="card"><h2>Specialist reports</h2>`;
+  const s = rep.spending;
+  h += `<details><summary><span>Spending Forensics</span></summary><div>${s ? `<p><b>${esc(s.headline)}</b></p>
+    <div class="kv"><div><small>Biggest: ${esc(EXP_CATS[s.biggest_category] || s.biggest_category)}</small><b>${money(s.biggest_category_amount)}</b></div><div><small>Avoidable</small><b style="color:var(--bad)">${money(s.total_avoidable)}</b></div></div>
+    ${(s.leaks || []).length ? `<ul class="list">${s.leaks.map((l) => `<li><div class="grow"><b>${esc(l.label)} <span class="pill" data-v="${esc(l.verdict)}">${esc(l.verdict)}</span></b><small>${money(l.amount)} · ${esc(l.occurrences)}× · ${money(l.annualized)}/year</small><small>${esc(l.reasoning)}</small></div></li>`).join("")}</ul>` : ""}
+    ${s.notes ? `<p class="small muted">${esc(s.notes)}</p>` : ""}` : `<p class="empty">This report didn't come back.</p>`}</div></details>`;
+  const c = rep.cashflow;
+  h += `<details><summary><span>Cash Flow: why you're broke</span></summary><div>${c ? `<p><b>${esc(c.headline)}</b></p>
+    <div class="kv"><div><small>Earned</small><b>${money(c.earned)}</b></div><div><small>Spent</small><b>${money(c.spent)}</b></div><div><small>Net</small><b style="color:${c.net < 0 ? "var(--bad)" : "var(--accent)"}">${money(c.net)}</b></div><div><small>Burn / day</small><b>${money(c.burn_rate_per_day)}</b></div></div>
+    ${(c.why_broke || []).length ? `<h3>Reasons, ranked</h3><ol class="plain">${c.why_broke.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}
+    ${(c.structural_fixes || []).length ? `<h3>Structural fixes</h3><ul class="plain">${c.structural_fixes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}` : `<p class="empty">This report didn't come back.</p>`}</div></details>`;
+  const tm = rep.time;
+  h += `<details><summary><span>Time & Productivity</span></summary><div>${tm ? `<p><b>${esc(tm.headline)}</b></p>
+    <div class="kv"><div><small>Work hours</small><b>${esc(tm.work_hours)}h</b></div><div><small>Effective rate</small><b>${tm.effective_hourly_rate != null ? money(tm.effective_hourly_rate, true) + "/h" : "—"}</b></div><div><small>Reclaimable</small><b>${esc(tm.reclaimable_hours)}h</b></div></div>
+    <p>${esc(tm.time_money_link)}</p>
+    ${(tm.reclaim_moves || []).length ? `<ul class="plain">${tm.reclaim_moves.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}` : `<p class="empty">This report didn't come back.</p>`}</div></details>`;
+  const ml = rep.meal;
+  h += `<details><summary><span>Meals & Calories</span></summary><div>${ml ? `<p><b>${esc(ml.headline)}</b></p>
+    <div class="kv"><div><small>Eating out</small><b>${money(ml.spent_eating_out)}</b></div><div><small>Meals bought</small><b>${esc(ml.meals_bought_out)}</b></div><div><small>Calories saved</small><b>${esc(Number(ml.calories_saved_estimate || 0).toLocaleString("en-GB"))}</b></div><div><small>Money saved</small><b style="color:var(--accent)">${money(ml.money_saved_estimate ?? ml.dollars_saved_estimate)}</b></div></div>` : `<p class="empty">This report didn't come back.</p>`}</div></details></section>`;
+  if (ml && ml.meals && ml.meals.length) h += mealsHTML(ml.meals.slice().sort((a, b) => a.day_of_week - b.day_of_week), ml.calories_saved_estimate, ml.grocery_list);
+  if (st.next_week_plan) h += gamePlanHTML(st.next_week_plan, -1, "Next week's game plan") + `<p class="small muted" style="padding:0 4px">This plan sets next week's budget on the Today screen until you build a Monday plan.</p>`;
+  h += `<button class="secondary" data-act="runReview" ${aiReady() && !S.review ? "" : "disabled"}>Run the review again</button>${aiStatusNote()}`;
+  return h;
+}
+
+// ---------------------------------------------------------------- Coach
+const SUGGESTIONS = ["Why am I broke this week?", "Where did my food money go?", "If I stopped eating out, what would I save in a year?", "What should I focus on today?"];
+function screenCoach() {
+  const msgs = chatMsgs();
+  let h = `<div class="top"><div><h1>Coach</h1></div>${msgs.length && !S.chat.busy ? `<button class="link" data-act="clearChat">Clear</button>` : ""}</div>`;
+  if (!msgs.length && !S.chat.busy) {
+    h += `<section class="card"><p>Ask anything about your money, time or plans. The coach looks up your real logged data before it answers.</p>
+      <div class="chips">${SUGGESTIONS.map((s, i) => `<button class="chip" data-act="suggest" data-arg="${i}">${esc(s)}</button>`).join("")}</div>${aiStatusNote()}</section>`;
+  }
+  h += `<div class="chat" id="chat">${msgs.map((m) => m.role === "user" ? `<div class="msg user">${esc(m.content)}</div>` : `<div class="msg assistant"><div class="md">${md(m.content)}</div></div>`).join("")}`;
+  if (S.chat.busy) {
+    h += S.chat.notes.map((n) => `<div class="tool-note">${esc(n)}</div>`).join("");
+    h += `<div class="msg assistant" id="stream">${S.chat.text ? `<div class="md">${md(S.chat.text)}</div>` : `<span class="thinking">Thinking…</span>`}</div>`;
+  }
+  if (S.chat.err) h += `<p class="errbox">${esc(S.chat.err)}</p>`;
+  return h + `</div>`;
+}
+function composerHTML() {
+  return `<div class="composer"><form data-form="chat" autocomplete="off"><textarea id="chat-in" name="q" rows="1" placeholder="${AI ? "Ask your coach" : "Coach unavailable"}" ${AI ? "" : "disabled"} aria-label="Message"></textarea>
+    ${S.chat.busy ? `<button type="button" class="send" data-act="stopChat" aria-label="Stop">${ICON.stop}</button>` : `<button class="send" aria-label="Send" ${AI ? "" : "disabled"}>${ICON.send}</button>`}</form></div>`;
+}
+
+// ---------------------------------------------------------------- Settings sheet
+function sheetHTML() {
+  const p = profile();
+  return `<div class="sheet-bg" data-act="closeSheet" data-self="1"><div class="sheet" role="dialog" aria-label="Settings">
+    <div class="grab"></div>
+    <div class="ghead"><h2>Settings</h2><button class="link" data-act="closeSheet">Done</button></div>
+    <form class="card form" data-form="profile" autocomplete="off">
+      <label class="field"><span>Your name</span><input class="in" id="s-name" name="name" value="${esc(p.name)}" placeholder="First name"></label>
+      <label class="field"><span>Currency</span><select class="in" id="s-cur" name="currency">${Object.keys(CURRENCIES).map((c) => `<option ${c === p.currency ? "selected" : ""}>${c}</option>`).join("")}</select></label>
+      <div class="two"><label class="field"><span>Savings goal / month</span><input class="in" id="s-goal" name="savingsGoal" inputmode="decimal" value="${p.savingsGoal || ""}"></label>
+      <label class="field"><span>Hourly rate</span><input class="in" id="s-rate" name="hourlyRate" inputmode="decimal" value="${p.hourlyRate || ""}"></label></div>
+      <p class="small muted">Your salary and monthly costs live in the Money tab.</p>
+      <button class="primary">Save</button></form>
+    <form class="card form" data-form="apikey" autocomplete="off">
+      <h3>AI coach</h3>
+      <label class="field"><span>Anthropic API key</span><input class="in" id="s-key" name="key" type="password" placeholder="sk-ant-…" value="${esc(getKey())}" autocapitalize="off" spellcheck="false"></label>
+      <p class="small muted">Powers the coach, Monday plan and Friday review. Create a key at console.anthropic.com; usage is billed to that account. The key is stored only on this phone and sent only to Anthropic.</p>
+      <button class="secondary">${getKey() ? "Update key" : "Save key"}</button>
+    </form>
+    <section class="card"><h3>Your data</h3>
+      <p class="small muted"><span id="sync"></span>, in this browser only. Export a backup now and then so you can restore it on a new phone or browser.</p>
+      <div class="row"><button class="secondary" data-act="exportData">Export backup</button><label class="secondary" style="cursor:pointer">Import backup<input type="file" id="import-file" accept="application/json,.json" hidden></label></div>
+      ${S.importConfirm ? `<div class="warnbox">Importing replaces everything on this phone with the backup (${esc(S.importConfirm.count)} items). <div class="row" style="margin-top:8px"><button class="primary" data-act="importYes">Replace my data</button><button class="secondary" data-act="importNo">Cancel</button></div></div>` : ""}
+    </section>
+  </div></div>`;
+}
+
+// ================================================================ markdown
+function md(src) {
+  const lines = String(src || "").replace(/\r/g, "").split("\n");
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/(^|[\s(])\*(?!\s)([^*]+?)\*(?=[\s.,;:!?)]|$)/g, "$1<em>$2</em>").replace(/`([^`]+)`/g, "<code>$1</code>");
+  let out = "", list = null, para = [], table = [];
+  const flushP = () => { if (para.length) { out += `<p>${inline(para.join(" "))}</p>`; para = []; } };
+  const flushL = () => { if (list) { out += `<${list.t}>${list.items.map((i) => `<li>${inline(i)}</li>`).join("")}</${list.t}>`; list = null; } };
+  const flushT = () => {
+    if (table.length) {
+      const rows = table.filter((r) => !/^\s*\|?\s*:?-{2,}/.test(r)).map((r) => r.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+      out += `<div class="tbl"><table>${rows.map((r, i) => `<tr>${r.map((c) => i === 0 ? `<th>${inline(c)}</th>` : `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</table></div>`;
+      table = [];
+    }
+  };
+  for (const raw of lines) {
+    const l = raw.trimEnd();
+    let m;
+    if (/^\s*\|/.test(l)) { flushP(); flushL(); table.push(l); continue; } else flushT();
+    if (!l.trim()) { flushP(); flushL(); continue; }
+    if ((m = l.match(/^#{1,6}\s+(.*)/))) { flushP(); flushL(); out += `<h4>${inline(m[1])}</h4>`; continue; }
+    if ((m = l.match(/^\s*[-*•]\s+(.*)/))) { flushP(); if (!list || list.t !== "ul") { flushL(); list = { t: "ul", items: [] }; } list.items.push(m[1]); continue; }
+    if ((m = l.match(/^\s*\d+[.)]\s+(.*)/))) { flushP(); if (!list || list.t !== "ol") { flushL(); list = { t: "ol", items: [] }; } list.items.push(m[1]); continue; }
+    if (list) { list.items[list.items.length - 1] += " " + l.trim(); continue; }
+    para.push(l.trim());
+  }
+  flushP(); flushL(); flushT();
+  return out;
+}
+
+// ================================================================ actions
+const ACT = {
+  tab: (k) => { S.tab = k; render(true); window.scrollTo(0, S.tab === "coach" ? document.body.scrollHeight : 0); },
+  sheet: (k) => { S.sheet = k; render(true); },
+  closeSheet: (_, el, e) => { if (el.dataset.self && e.target !== el) return; S.sheet = null; render(true); },
+  moneyMonth: (n) => { const ym = shiftYM(S.moneyYM, Number(n)); if (ym <= shiftYM(curYM(), 1)) { S.moneyYM = ym; render(true); } },
+  pickMonth: (ym) => { S.moneyYM = ym; render(true); window.scrollTo(0, 0); },
+  addCost: (name) => {
+    const md = moneyDoc(); const c = { id: uid(), name: name || "", amount: 0 };
+    md.costs.push(c); delete md.updatedAt; put("money", md); render(true);
+    const el = document.getElementById((name ? "c-a-" : "c-n-") + c.id); if (el) el.focus();
+  },
+  delCost: (id) => { const md = moneyDoc(); md.costs = md.costs.filter((c) => c.id !== id); delete md.updatedAt; put("money", md); refreshMonth(S.moneyYM); render(true); },
+  allowPreset: (v) => { const md = moneyDoc(); md.allowance = Number(v); delete md.updatedAt; put("money", md); refreshMonth(S.moneyYM); render(true); },
+  copySave: () => {
+    const v = monthPlan(S.moneyYM).save, txt = v.toFixed(2).replace(".", ",");
+    try { navigator.clipboard.writeText(txt).then(() => toast("Copied " + money(v, true)), () => toast(txt)); } catch (e) { toast(txt); }
+  },
+  exportData: () => {
+    const blob = new Blob([JSON.stringify({ app: "BetterMe", exportedAt: new Date().toISOString(), docs: DOCS }, null, 1)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "betterme-backup-" + todayKey() + ".json";
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  },
+  importYes: () => {
+    const docs = S.importConfirm && S.importConfirm.docs; if (!docs) return;
+    try { Object.keys(localStorage).filter((k) => k.startsWith(LS)).forEach((k) => localStorage.removeItem(k)); } catch (e) {}
+    Object.keys(DOCS).forEach((k) => delete DOCS[k]);
+    Object.entries(docs).forEach(([k, v]) => { DOCS[k] = v; persist(k, false); });
+    S.importConfirm = null; S.sheet = null; render(true); toast("Backup restored");
+  },
+  importNo: () => { S.importConfirm = null; render(true); },
+  goLog: () => { S.tab = "log"; S.logDate = todayKey(); S.logMode = "checkin"; render(true); window.scrollTo(0, 0); },
+  goWeek: (m) => { S.tab = "week"; S.weekMode = m; S.weekSel = weekOf(todayKey()); render(true); window.scrollTo(0, 0); },
+  logDay: (n) => { const k = addDays(S.logDate, Number(n)); if (k <= todayKey()) { S.logDate = k; render(true); } },
+  logMode: (m) => { S.logMode = m; render(true); },
+  delItem: (arg) => { const [list, id] = arg.split(":"); updateWeek(S.logDate, (d) => { d[list] = d[list].filter((x) => x.id !== id); }); render(true); toast("Deleted"); },
+  toggleTask: (id) => {
+    setTasks(tasks().map((x) => x.id === id ? Object.assign({}, x, x.status === "open" ? { status: "done", completedAt: new Date().toISOString() } : { status: "open", completedAt: null }) : x));
+    render(true);
+  },
+  delTask: (id) => { setTasks(tasks().filter((x) => x.id !== id)); render(true); },
+  toggleDone: () => { S.doneOpen = !S.doneOpen; render(true); },
+  weekMode: (m) => { S.weekMode = m; S.planEdit = false; render(true); },
+  weekShift: (n) => { S.weekSel = addDays(S.weekSel, Number(n)); S.planEdit = false; render(true); },
+  planEdit: () => { S.planEdit = true; render(true); window.scrollTo(0, 0); },
+  planEditCancel: () => { S.planEdit = false; render(true); },
+  planTasks: () => {
+    const g = planDoc(S.weekSel) && planDoc(S.weekSel).output && planDoc(S.weekSel).output.game_plan;
+    if (!g) return;
+    const have = new Set(tasks().map((x) => x.title.toLowerCase()));
+    const add = [];
+    (g.days || []).forEach((d, i) => (d.tasks || []).forEach((t) => { if (!have.has(t.toLowerCase())) { have.add(t.toLowerCase()); add.push({ id: uid(), title: t, dueAt: addDays(S.weekSel, i), priority: "medium", status: "open", createdAt: new Date().toISOString() }); } }));
+    setTasks(tasks().concat(add));
+    toast(add.length ? `Added ${add.length} task${add.length === 1 ? "" : "s"}` : "Those tasks are already on your list");
+  },
+  insight: () => runInsight(),
+  runReview: () => runReview(S.weekSel),
+  suggest: (i) => sendChat(SUGGESTIONS[Number(i)]),
+  stopChat: () => { if (S.chat.ctl) S.chat.ctl.abort(); },
+  clearChat: () => { put("chat", { messages: [] }); S.chat.err = ""; render(true); }
+};
+document.addEventListener("click", (e) => {
+  const el = e.target.closest("[data-act]");
+  if (!el) return;
+  const fn = ACT[el.dataset.act];
+  if (!fn) return;
+  if (el.dataset.self && e.target !== el) return;
+  e.preventDefault();
+  fn(el.dataset.arg, el, e);
+});
+
+const FORM = {
+  expense: (f) => {
+    const amount = parseAmount(f.get("amount"));
+    if (!amount) return toast("Enter an amount");
+    const category = f.get("category") || "other";
+    S.lastCat = category;
+    updateWeek(S.logDate, (d) => d.expenses.push({ id: uid(), date: S.logDate, amount: round2(amount), category, merchant: String(f.get("merchant") || "").trim(), necessity: f.get("necessity") || "unknown" }));
+    render(true); toast("Added " + money(amount, true));
+    const a = $("#f-amount"); if (a) a.focus();
+  },
+  activity: (f) => {
+    const desc = String(f.get("description") || "").trim();
+    const mins = parseInt(f.get("customMin"), 10) || parseInt(f.get("minutes"), 10) || 0;
+    if (!desc || !mins) return toast("Add what you did and for how long");
+    updateWeek(S.logDate, (d) => d.activities.push({ id: uid(), date: S.logDate, category: f.get("category") || "other", description: desc, durationMin: mins, productivity: parseInt(f.get("productivity"), 10) || 3 }));
+    render(true); toast("Logged " + fmtMin(mins));
+  },
+  work: (f) => {
+    const hours = parseAmount(f.get("hours"));
+    if (!hours) return toast("Enter the hours you worked");
+    updateWeek(S.logDate, (d) => d.work.push({ id: uid(), date: S.logDate, hours: round2(hours), notes: String(f.get("notes") || "").trim() }));
+    render(true); toast("Logged " + hours + "h");
+  },
+  checkin: (f) => {
+    updateWeek(S.logDate, (d) => { d.checkins[S.logDate] = { mood: parseInt(f.get("mood"), 10) || 3, notes: String(f.get("notes") || "").trim(), completed: true }; });
+    render(true); toast("Day checked in");
+  },
+  task: (f) => {
+    const title = String(f.get("title") || "").trim();
+    if (!title) return;
+    setTasks(tasks().concat([{ id: uid(), title, dueAt: f.get("due") || null, priority: f.get("priority") || "medium", status: "open", createdAt: new Date().toISOString() }]));
+    render(true); const i = $("#f-task"); if (i) i.focus();
+  },
+  apikey: (f) => {
+    const k = String(f.get("key") || "").trim();
+    try { k ? localStorage.setItem(KEY_LS, k) : localStorage.removeItem(KEY_LS); } catch (e) {}
+    AI = k ? makeAI() : null;
+    render(true); toast(k ? "API key saved" : "API key removed");
+  },
+  profile: (f) => {
+    put("profile", { name: String(f.get("name") || "").trim(), currency: f.get("currency") || "EUR", savingsGoal: parseAmount(f.get("savingsGoal")), hourlyRate: parseAmount(f.get("hourlyRate")) });
+    S.sheet = null; render(true); toast("Saved");
+  },
+  plan: (f) => {
+    const lines = (k) => String(f.get(k) || "").split("\n").map((s) => s.trim()).filter(Boolean);
+    const intake = { incomeExpected: parseAmount(f.get("incomeExpected")), lunchBudget: parseAmount(f.get("lunchBudget")), dinnerBudget: parseAmount(f.get("dinnerBudget")), otherBudget: parseAmount(f.get("otherBudget")), goals: lines("goals"), plannedTasks: lines("plannedTasks") };
+    runPlan(S.weekSel, intake);
+  },
+  chat: (f) => { const q = String(f.get("q") || "").trim(); if (q) sendChat(q); }
+};
+document.addEventListener("submit", (e) => {
+  const fn = FORM[e.target.dataset.form];
+  if (!fn) return;
+  e.preventDefault();
+  fn(new FormData(e.target), e.target);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.target.id === "chat-in" && e.key === "Enter" && !e.shiftKey && !e.isComposing && window.matchMedia("(pointer: fine)").matches) {
+    e.preventDefault(); e.target.form.requestSubmit();
+  }
+});
+document.addEventListener("change", (e) => {
+  if (e.target.id !== "import-file" || !e.target.files[0]) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try {
+      const j = JSON.parse(r.result);
+      if (!j || !j.docs || typeof j.docs !== "object") throw 0;
+      S.importConfirm = { docs: j.docs, count: Object.keys(j.docs).length }; render(true);
+    } catch (err) { toast("That file isn't a BetterMe backup."); }
+  };
+  r.readAsText(e.target.files[0]);
+});
+document.addEventListener("input", (e) => {
+  const el = e.target;
+  if (el.id === "m-salary" || el.id === "m-extra") {
+    saveMonth(S.moneyYM, parseAmount($("#m-salary").value), parseAmount($("#m-extra").value));
+    updateMoneyBits();
+  } else if (el.dataset && el.dataset.cost) {
+    const md = moneyDoc(); const c = md.costs.find((x) => x.id === el.dataset.cost);
+    if (c) { if (el.dataset.f === "name") c.name = el.value; else c.amount = round2(parseAmount(el.value)); delete md.updatedAt; putSoon("money", md); refreshMonth(S.moneyYM); updateMoneyBits(); }
+  } else if (el.id === "m-allow") {
+    const md = moneyDoc(); md.allowance = Number(el.value); delete md.updatedAt; putSoon("money", md); refreshMonth(S.moneyYM); updateMoneyBits();
+  }
+  if (e.target.id === "chat-in") { e.target.style.height = "auto"; e.target.style.height = Math.min(120, e.target.scrollHeight) + "px"; }
+});
+
+let toastT;
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 2000); }
+
+// ================================================================ AI runs
+async function runInsight() {
+  if (!AI || S.insightBusy) return;
+  S.insightBusy = true; S.insightErr = ""; render(true);
+  const wk = weekOf(todayKey());
+  try {
+    const { text } = await AI(`${HOUSE_RULES()}\n\nYOUR ROLE: the coach's daily read on the home screen.\nWrite 2-3 short sentences: the single most useful observation about this week so far, then one specific action for today with a money figure attached. No headings, no lists, no greeting.\n\nDATA (JSON):\n${JSON.stringify(snapshot(wk))}`, { cache: false });
+    updateWeek(todayKey(), (d) => { d.insight = { date: todayKey(), text: text.trim() }; });
+  } catch (e) { S.insightErr = aiError(e); }
+  S.insightBusy = false; render(true);
+}
+
+async function runPlan(wk, intake) {
+  if (!AI || S.planBusy) return;
+  S.planBusy = true; S.planErr = "";
+  put("plan-" + wk, Object.assign({}, planDoc(wk) || {}, { intake }));
+  render(true);
+  try {
+    const data = Object.assign(snapshot(wk), { intake, week_days: DAYS_FULL.map((d, i) => d + " " + addDays(wk, i)) });
+    const out = await AI.json(agentPrompt("monday", data), { cache: false });
+    if (!out || !out.game_plan || !out.budget_advice) throw { code: "invalid_json" };
+    put("plan-" + wk, { intake, output: out, createdAt: new Date().toISOString() });
+    S.planEdit = false;
+    toast("Your week is planned");
+  } catch (e) { S.planErr = aiError(e); }
+  S.planBusy = false; render(true); window.scrollTo(0, 0);
+}
+
+async function runReview(wk) {
+  if (!AI || S.review) return;
+  S.review = { wk, status: {} };
+  S.reviewErr = null;
+  render(true);
+  const data = snapshot(wk);
+  const t = weekTotals(wk);
+  const one = async (role) => {
+    S.review.status[role] = "working"; render(true);
+    try {
+      const r = await AI.json(agentPrompt(role, data), { cache: false });
+      S.review.status[role] = "done"; render(true);
+      return r;
+    } catch (e) {
+      S.review.status[role] = "failed"; render(true);
+      if (e && (e.code === "not_granted" || e.code === "sampling_disabled" || e.code === "rate_limited")) throw e;
+      return null;
+    }
+  };
+  try {
+    const [spending, cashflow, time, meal] = await Promise.all(["spending", "cashflow", "time", "meal"].map(one));
+    const reports = { spending, cashflow, time, meal };
+    if (!spending && !cashflow && !time && !meal) throw { code: "upstream_error" };
+    S.review.status.strategist = "working"; render(true);
+    const stratData = { week_snapshot: data, specialist_reports: Object.fromEntries(Object.entries(reports).map(([k, v]) => [k, v || "report unavailable"])), next_week_start: addDays(wk, 7) };
+    const strategist = await AI.json(agentPrompt("strategist", stratData), { cache: false, modelTier: "complex" });
+    if (!strategist || !strategist.narrative) throw { code: "invalid_json" };
+    S.review.status.strategist = "done";
+    put("review-" + wk, { reports, strategist, totals: { spent: t.spent, hours: t.workHours }, createdAt: new Date().toISOString() });
+    S.review = null;
+    toast("Review ready");
+  } catch (e) {
+    S.review.status.strategist = S.review.status.strategist === "working" ? "failed" : S.review.status.strategist;
+    const err = aiError(e);
+    S.review = null;
+    S.reviewErr = { wk, err };
+  }
+  render(true);
+  window.scrollTo(0, 0);
+}
+
+// ---------------------------------------------------------------- coach tools
+function expensesInDays(days) {
+  const from = addDays(todayKey(), -(Math.max(1, Number(days) || 7) - 1));
+  return allExpenses().filter((e) => e.date >= from);
+}
+const COACH_TOOLS = [
+  { name: "spending_by_category", description: "Total spent per category over the last N days (including today). Returns {days, total, by_category}.",
+    inputSchema: { type: "object", properties: { days: { type: "integer", description: "How many days back, e.g. 7, 30, 90" } }, required: ["days"] },
+    execute: ({ days }) => { const ex = expensesInDays(days); const by = {}; ex.forEach((e) => { by[e.category] = round2((by[e.category] || 0) + e.amount); }); return { days: Number(days), total: round2(sum(ex, (e) => e.amount)), by_category: by }; } },
+  { name: "merchant_frequency", description: "How often and how much the user spent at each merchant over the last N days. Returns a list sorted by total.",
+    inputSchema: { type: "object", properties: { days: { type: "integer" } }, required: ["days"] },
+    execute: ({ days }) => { const m = {}; expensesInDays(days).forEach((e) => { const k = e.merchant || "(no merchant: " + e.category + ")"; m[k] = m[k] || { merchant: k, count: 0, total: 0 }; m[k].count++; m[k].total = round2(m[k].total + e.amount); }); return Object.values(m).sort((a, b) => b.total - a.total).slice(0, 25); } },
+  { name: "list_expenses", description: "Individual expenses over the last N days, optionally one category (food_out, groceries, transport, rent, bills, subscriptions, shopping, fun, health, other). Max 80 rows, newest first.",
+    inputSchema: { type: "object", properties: { days: { type: "integer" }, category: { type: "string" } }, required: ["days"] },
+    execute: ({ days, category }) => expensesInDays(days).filter((e) => !category || e.category === category).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 80).map((e) => ({ date: e.date, amount: e.amount, category: e.category, merchant: e.merchant, necessity: e.necessity })) },
+  { name: "budget_status", description: "This week's budget, amount spent, what's left and the daily allowance for the remaining days.",
+    execute: () => { const wk = weekOf(todayKey()), t = weekTotals(wk), b = weekBudget(wk), di = dayIdx(todayKey()); return { week_start: wk, weekly_budget: b, spent: t.spent, remaining: b != null ? round2(b - t.spent) : null, days_left_including_today: 7 - di, daily_allowance_left: b != null ? round2((b - t.spent) / (7 - di)) : null, spent_today: round2(t.byDay[di]) }; } },
+  { name: "time_breakdown", description: "Hours per activity category and total work hours over the last N days.",
+    inputSchema: { type: "object", properties: { days: { type: "integer" } }, required: ["days"] },
+    execute: ({ days }) => { const from = addDays(todayKey(), -(Math.max(1, Number(days) || 7) - 1)); const by = {}; allActivities().filter((a) => a.date >= from).forEach((a) => { by[a.category] = round2((by[a.category] || 0) + a.durationMin / 60); }); const work = round2(sum(allWork().filter((w) => w.date >= from), (w) => w.hours)); return { days: Number(days), hours_by_category: by, work_hours_logged: work, hourly_rate: profile().hourlyRate || null }; } },
+  { name: "savings_projection", description: "Annualise a recurring amount: give an amount and how often it recurs (day, week or month). Returns weekly, monthly and yearly totals.",
+    inputSchema: { type: "object", properties: { amount: { type: "number" }, per: { type: "string", enum: ["day", "week", "month"] } }, required: ["amount", "per"] },
+    execute: ({ amount, per }) => { const a = Number(amount) || 0; const yearly = per === "day" ? a * 365 : per === "week" ? a * 52 : a * 12; return { weekly: round2(yearly / 52), monthly: round2(yearly / 12), yearly: round2(yearly) }; } },
+  { name: "list_tasks", description: "The user's open tasks with due dates and priority.",
+    execute: () => tasks().filter((x) => x.status === "open").sort(byDue).map((x) => ({ title: x.title, due: x.dueAt, priority: x.priority })) },
+  { name: "add_task", description: "Add a task to the user's task list. Only when the user asks you to add or remind them of something.",
+    inputSchema: { type: "object", properties: { title: { type: "string" }, due: { type: "string", description: "YYYY-MM-DD, optional" } }, required: ["title"] },
+    execute: ({ title, due }) => { const t = { id: uid(), title: String(title).slice(0, 200), dueAt: /^\d{4}-\d{2}-\d{2}$/.test(String(due || "")) ? String(due) : null, priority: "medium", status: "open", createdAt: new Date().toISOString() }; setTasks(tasks().concat([t])); toast("Task added: " + t.title); return { added: t.title, due: t.dueAt }; } }
+];
+const TOOL_NOTES = { spending_by_category: "Checked spending by category", merchant_frequency: "Checked merchants", list_expenses: "Looked through expenses", budget_status: "Checked this week's budget", time_breakdown: "Checked your time", savings_projection: "Ran a savings projection", list_tasks: "Checked your tasks", add_task: "Added a task" };
+
+async function sendChat(q) {
+  if (!AI || S.chat.busy) return;
+  const msgs = chatMsgs().concat([{ role: "user", content: q, at: new Date().toISOString() }]);
+  put("chat", { messages: msgs.slice(-40) });
+  S.chat = { busy: true, text: "", notes: [], err: "", ctl: new AbortController() };
+  render(true);
+  const wk = weekOf(todayKey()), t = weekTotals(wk), p = profile();
+  const rules = `${HOUSE_RULES()}
+
+YOUR ROLE: the user's live financial coach in a chat window.
+You have tools that query their real logged data. Use them before answering any question about amounts, categories, merchants, budgets, time or tasks — do not estimate from the summary when a tool can give you the exact figure. Use savings_projection for any annualised number.
+Answer conversationally and get to the point. Lead with the answer, then the evidence. Keep replies short enough to read on a phone. When the user asks what to do, give them a specific action with a money figure attached. If they ask something outside money and time, just help them; you are their assistant, not only their accountant.
+
+Today is ${DAYS_FULL[dayIdx(todayKey())]} ${todayKey()}. User: ${p.name || "unknown name"}. This month: salary ${monthPlan(curYM()).income || "not entered"}, monthly costs ${monthPlan(curYM()).costs}, spending money ${moneyDoc().allowance}/week, moving ${monthPlan(curYM()).save} to savings. Monthly savings goal: ${p.savingsGoal || "not set"}.
+This week so far: spent ${t.spent}, budget ${weekBudget(wk) ?? "not set"}, work hours ${t.workHours}, open tasks ${tasks().filter((x) => x.status === "open").length}.`;
+  const turns = [{ role: "user", content: rules }].concat(msgs.slice(-16).map((m) => ({ role: m.role, content: m.content })));
+  const tools = COACH_TOOLS.map((tl) => Object.assign({}, tl, { execute: (input, ctx) => { S.chat.notes.push(TOOL_NOTES[tl.name] || tl.name); const n = document.createElement("div"); n.className = "tool-note"; n.textContent = TOOL_NOTES[tl.name]; const st = $("#stream"); if (st) st.before(n); return tl.execute(input || {}, ctx); } }));
+  let final = "";
+  try {
+    const caps = await AI.limits().catch(() => null);
+    const opts = { signal: S.chat.ctl.signal, cache: false, onText: ({ text }) => { S.chat.text = text; const st = $("#stream"); if (st) { st.innerHTML = `<div class="md">${md(text)}</div>`; window.scrollTo(0, document.body.scrollHeight); } } };
+    if (caps && caps.tools) opts.tools = tools;
+    const res = await AI(turns, opts);
+    final = res.text;
+  } catch (e) {
+    final = e && e.text ? e.text : "";
+    if (!(e && e.code === "cancelled" && final)) S.chat.err = aiError(e);
+  }
+  if (final.trim()) put("chat", { messages: chatMsgs().concat([{ role: "assistant", content: final.trim(), at: new Date().toISOString() }]).slice(-40) });
+  const err = S.chat.err;
+  S.chat = { busy: false, text: "", notes: [], err, ctl: null };
+  render(true);
+}
+
+// ================================================================ boot
+const SCREENS = { today: screenToday, log: screenLog, money: screenMoney, tasks: screenTasks, week: screenWeek, coach: screenCoach };
+loadLocal();
+render(true);
+
+AI = getKey() ? makeAI() : null;
+render(true);
+})();
+</script>
+</body>
+</html>
