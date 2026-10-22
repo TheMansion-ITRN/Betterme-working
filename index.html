@@ -688,7 +688,8 @@ body.coach .ai-load, body.coach .toast { bottom: calc(var(--tabh) + var(--tabgap
 .intro-pill b { font-family: var(--font-num); font-size: 30px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .intro-pill .hi { font-size: 15px; font-weight: 600; color: var(--fg); }
 @keyframes pillIn { to { opacity: 1; transform: none; } }
-.intro-skip { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 22px); left: 0; right: 0; text-align: center; color: var(--muted); font-size: 13px; opacity: 0; animation: fadeUp .6s ease 2.2s forwards; z-index: 1; }
+.intro-credit { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); left: 0; right: 0; text-align: center; z-index: 1; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); opacity: 0; animation: fadeUp .7s ease 1.9s forwards; }
+.intro-skip { position: absolute; bottom: calc(env(safe-area-inset-bottom, 0px) + 44px); left: 0; right: 0; text-align: center; color: var(--muted); font-size: 13px; opacity: 0; animation: fadeUp .6s ease 2.2s forwards; z-index: 1; }
  
 /* exit: the intro dissolves and the app comes forward */
 .intro.out { opacity: 0; transform: scale(1.07); filter: blur(14px); pointer-events: none; }
@@ -721,7 +722,7 @@ body.entering .tabbar nav { animation: barIn 1s cubic-bezier(.2, 1.3, .35, 1) .2
 @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(16px) scale(.85); } to { opacity: 1; transform: translateX(-50%); } }
  
 @media (prefers-reduced-motion: reduce) {
-  .intro .blob, .intro-icon, .intro-icon .line, .intro-icon .dot, .intro-icon::after, .intro-word span, .intro-tag, .intro-pill, .intro-skip { animation-duration: .01s !important; animation-delay: 0s !important; }
+  .intro .blob, .intro-icon, .intro-icon .line, .intro-icon .dot, .intro-icon::after, .intro-word span, .intro-tag, .intro-pill, .intro-skip, .intro-credit { animation-duration: .01s !important; animation-delay: 0s !important; }
   .intro.out { transform: none; filter: none; }
   body.entering #main > *, body.entering .tabbar nav, #main.screen-in > *, .sheet-bg.anim .sheet, .sheet-bg.closing .sheet, .toast:not([hidden]) { animation: none !important; }
 }
@@ -2477,7 +2478,8 @@ function startIntro() {
       <p class="intro-tag">Spend smarter. Save more.</p>
       <div class="intro-pill"><span class="hi">${esc(hello)}${name ? ", " + esc(name) : ""}</span>${label ? `<small>${esc(label)}</small><b id="intro-num">${money(0)}</b>` : `<small>Let's make this month count.</small>`}</div>
     </div>
-    <p class="intro-skip">Tap to skip</p>`;
+    <p class="intro-skip">Tap to skip</p>
+    <p class="intro-credit">Made By Milan Van Noorloos</p>`;
   document.body.appendChild(el);
   document.body.style.overflow = "hidden";
  
